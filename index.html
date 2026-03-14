@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NursePro — Evidence-Based Nursing Procedures Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b2444;--navy2:#163560;
+  --teal:#0e7c6e;--teal2:#14a897;
+  --w:#fff;--off:#f7f9fb;
+  --g1:#eef1f6;--g2:#dce2ec;--g4:#94a3b8;--g6:#4b5f7a;--g8:#1e2d42;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--g8);min-height:100vh}
+/* ── HEADER ── */
+header{background:linear-gradient(135deg,var(--navy),var(--navy2) 60%,#1a4a7a);position:sticky;top:0;z-index:200;box-shadow:0 2px 20px rgba(11,36,68,.5)}
+.hi{max-width:1440px;margin:auto;padding:14px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo{width:48px;height:48px;background:linear-gradient(135deg,var(--teal),var(--teal2));border-radius:13px;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:18px;font-weight:900;color:#fff;box-shadow:0 4px 14px rgba(14,124,110,.45);letter-spacing:-1px}
+.bn{font-family:'DM Serif Display',serif;font-size:1.4rem;color:#fff;line-height:1}
+.bs{font-size:.67rem;color:rgba(255,255,255,.5);letter-spacing:.8px;margin-top:3px}
+.sb{flex:1;max-width:500px;position:relative}
+.sb input{width:100%;padding:10px 16px 10px 42px;border-radius:12px;border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.12);color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none;transition:.2s}
+.sb input::placeholder{color:rgba(255,255,255,.45)}
+.sb input:focus{border-color:var(--teal2);background:rgba(255,255,255,.18)}
+.si{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.5);pointer-events:none}
+.hm{display:flex;gap:10px;margin-right:auto}
+.chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:9px;padding:5px 13px;text-align:center}
+.chip strong{display:block;font-size:1rem;font-weight:700;color:var(--teal2)}
+.chip small{font-size:.6rem;color:rgba(255,255,255,.55);letter-spacing:.5px}
+/* ── CAT STRIP ── */
+.cs{background:var(--w);border-bottom:2px solid var(--g1);overflow-x:auto;scrollbar-width:none}
+.cs::-webkit-scrollbar{display:none}
+.ci{max-width:1440px;margin:auto;padding:9px 28px;display:flex;gap:5px;white-space:nowrap}
+.cb{padding:6px 13px;border-radius:30px;border:1.5px solid var(--g2);background:transparent;color:var(--g6);font-family:'DM Sans',sans-serif;font-size:.77rem;font-weight:600;cursor:pointer;transition:.18s;display:inline-flex;align-items:center;gap:5px}
+.cb:hover{border-color:var(--teal);color:var(--teal)}
+.cb.active{background:var(--navy);border-color:var(--navy);color:#fff}
+/* ── MAIN ── */
+main{max-width:1440px;margin:auto;padding:24px 28px}
+.ph{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.pt{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--navy)}
+.pc{font-size:.8rem;color:var(--g4);font-weight:500}
+.pc strong{color:var(--teal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+/* ── CARD ── */
+.card{background:var(--w);border-radius:15px;border:1.5px solid var(--g1);overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(11,36,68,.1);border-color:var(--g2)}
+.ct{height:4px}
+.cb2{padding:17px 19px}
+.ch{display:flex;align-items:flex-start;gap:12px;margin-bottom:13px}
+.ci2{width:43px;height:43px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.ctt{font-size:.95rem;font-weight:700;color:var(--navy);line-height:1.3}
+.ctag{display:inline-block;margin-top:3px;font-size:.64rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:2px 8px;border-radius:20px}
+.csteps{list-style:none;display:flex;flex-direction:column;gap:5px}
+.csteps li{display:flex;align-items:flex-start;gap:8px;font-size:.79rem;color:var(--g6);line-height:1.5}
+.sn{width:19px;height:19px;border-radius:50%;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:800;color:#fff}
+.more{font-size:.72rem;font-weight:700;padding-right:27px;margin-top:1px}
+.cf{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:13px;padding-top:11px;border-top:1px solid var(--g1)}
+.tag{font-size:.63rem;font-weight:700;padding:2px 8px;border-radius:20px}
+.tb{background:#dbeafe;color:#1e40af}
+.tr{background:#fee2e2;color:#991b1b}
+.tgr{background:var(--g1);color:var(--g6)}
+/* ── MODAL ── */
+.ov{position:fixed;inset:0;background:rgba(11,36,68,.72);backdrop-filter:blur(5px);z-index:500;display:none;align-items:center;justify-content:center;padding:18px}
+.ov.open{display:flex}
+.mo{background:var(--w);border-radius:20px;width:100%;max-width:700px;max-height:92vh;overflow-y:auto;animation:su .27s ease}
+@keyframes su{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.mh{padding:20px 24px 16px;border-bottom:2px solid var(--g1);position:sticky;top:0;background:var(--w);border-radius:20px 20px 0 0;display:flex;align-items:center;gap:13px}
+.mic{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.mt{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--navy)}
+.mcat{font-size:.68rem;font-weight:700;margin-top:3px;letter-spacing:.4px}
+.mcl{margin-right:auto;width:32px;height:32px;border-radius:8px;border:1.5px solid var(--g2);background:transparent;cursor:pointer;font-size:.95rem;color:var(--g4);display:flex;align-items:center;justify-content:center;transition:.18s;flex-shrink:0}
+.mcl:hover{background:var(--g1)}
+.mb{padding:20px 24px}
+.ms{margin-bottom:20px}
+.mst{font-size:.65rem;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--g4);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.mst::after{content:'';flex:1;height:1px;background:var(--g1)}
+.ib{border-radius:10px;padding:11px 13px;font-size:.84rem;line-height:1.65;display:flex;align-items:flex-start;gap:9px;margin-bottom:7px}
+.ib .ii{font-size:.9rem;flex-shrink:0;margin-top:1px}
+.ibi{background:#eff6ff;border:1.5px solid #bfdbfe;color:#1e40af}
+.ibw{background:#fffbeb;border:1.5px solid #fde68a;color:#78350f}
+.ibs{background:#f0fdf4;border:1.5px solid #bbf7d0;color:#14532d}
+.eg{display:flex;flex-wrap:wrap;gap:6px}
+.ec{background:var(--g1);border-radius:7px;padding:4px 10px;font-size:.76rem;font-weight:500;color:var(--g6);display:flex;align-items:center;gap:4px}
+.sol{list-style:none;display:flex;flex-direction:column;gap:9px}
+.sol li{display:flex;align-items:flex-start;gap:11px;font-size:.86rem;color:var(--g6);line-height:1.65}
+.sc{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:#fff;flex-shrink:0;margin-top:2px}
+.rb{background:var(--off);border-radius:10px;padding:13px 15px}
+.ri{font-size:.76rem;color:var(--g6);line-height:1.75;padding-left:16px;position:relative;margin-bottom:3px}
+.ri::before{content:'•';position:absolute;left:3px;color:var(--teal)}
+.nr{grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--g4)}
+.nr .ni{font-size:2.5rem;margin-bottom:10px}
+@media(max-width:768px){
+  .hi{padding:11px 16px;gap:10px}.bn{font-size:1.1rem}.hm{display:none}
+  main{padding:14px}.grid{grid-template-columns:1fr}.mh,.mb{padding:15px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="hi">
+    <div class="brand">
+      <div class="logo">Nρ</div>
+      <div><div class="bn">NursePro</div><div class="bs">Evidence-Based Nursing Procedures Reference</div></div>
+    </div>
+    <div class="sb">
+      <span class="si">🔍</span>
+      <input type="text" id="searchInput" placeholder="Search procedures, skills, keywords…" autocomplete="off"/>
+    </div>
+    <div class="hm">
+      <div class="chip"><strong id="tP">0</strong><small>PROCEDURES</small></div>
+      <div class="chip"><strong id="tC">0</strong><small>CATEGORIES</small></div>
+    </div>
+  </div>
+</header>
+<div class="cs"><div class="ci" id="catBar"><button class="cb active" data-cat="all" onclick="setcat(this,'all')">All Procedures</button></div></div>
+<main>
+  <div class="ph"><div class="pt" id="pgTitle">All Procedures</div><div class="pc" id="pgCount"></div></div>
+  <div class="grid" id="grid"></div>
+</main>
+<div class="ov" id="overlay" onclick="ovClick(event)">
+  <div class="mo" id="modal">
+    <div class="mh">
+      <div class="mic" id="mIco"></div>
+      <div><div class="mt" id="mTit"></div><div class="mcat" id="mCat"></div></div>
+      <button class="mcl" onclick="closeModal()">✕</button>
+    </div>
+    <div class="mb" id="mBod"></div>
+  </div>
+</div>
+<script>
+const CATS=[
+  {id:'iv',      label:'IV Therapy',                   icon:'💉',color:'#2563eb',bg:'#eff6ff'},
+  {id:'airway',  label:'Airway Management',             icon:'🫁',color:'#7c3aed',bg:'#f5f3ff'},
+  {id:'wound',   label:'Wound & Skin Care',             icon:'🩹',color:'#d97706',bg:'#fffbeb'},
+  {id:'cath',    label:'Catheters & Drainage',          icon:'🔵',color:'#0891b2',bg:'#ecfeff'},
+  {id:'vitals',  label:'Vital Signs & Monitoring',      icon:'📊',color:'#16a34a',bg:'#f0fdf4'},
+  {id:'meds',    label:'Medication Administration',     icon:'💊',color:'#db2777',bg:'#fdf2f8'},
+  {id:'feed',    label:'Nutrition & Enteral Tubes',     icon:'🧃',color:'#ea580c',bg:'#fff7ed'},
+  {id:'blood',   label:'Blood & Transfusion',           icon:'🩸',color:'#dc2626',bg:'#fff1f2'},
+  {id:'central', label:'Central Lines & Vascular',      icon:'🔗',color:'#374151',bg:'#f9fafb'},
+  {id:'ostomy',  label:'Ostomy & Surgical Drains',      icon:'🟡',color:'#ca8a04',bg:'#fefce8'},
+  {id:'cardiac', label:'Cardiac & Resuscitation',       icon:'❤️',color:'#e11d48',bg:'#fff1f2'},
+  {id:'neuro',   label:'Neurological & Positioning',    icon:'🧠',color:'#6d28d9',bg:'#f5f3ff'},
+  {id:'hygiene', label:'Infection Control & Hygiene',   icon:'🛡️',color:'#0284c7',bg:'#f0f9ff'},
+];
+
+const PROCS=[
+
+// ═══════ IV THERAPY ═══════
+{id:1,cat:‘iv’,icon:‘💉’,title:‘Peripheral IV Cannula Insertion’,
+summary:‘Inserting a short peripheral IV catheter with sterile technique for fluid, medication, or blood product delivery.’,
+equipment:[‘IV catheter (18–22G adult; 22–24G pediatric/elderly)’,‘Tourniquet’,‘2% CHG/70% alcohol prep swab or 70% isopropyl alcohol’,‘Transparent sterile dressing (e.g., Tegaderm)’,‘Pre-filled NS flush syringe 3–5 mL’,‘Non-sterile gloves’,‘Catheter stabilization device or tape’,‘Sharps container’],
+steps:[
+‘Perform hand hygiene (WHO 5 Moments). Apply non-sterile gloves.’,
+‘Identify patient with TWO identifiers (full name + date of birth or MRN). Scan BCMA if available.’,
+‘Select vein: forearm preferred; dorsal hand as alternative; antecubital last resort (limits mobility).’,
+‘Apply tourniquet 10–15 cm proximal to insertion site. Palpate for a soft, bouncy, straight vein.’,
+‘Scrub site with CHG-alcohol or 70% isopropyl in a circular outward motion for ≥30 s. Allow to fully dry (≥30 s, do NOT fan dry).’,
+‘Stabilize vein with non-dominant hand. Insert catheter bevel-up at 15–30°.’,
+‘Advance until blood flashback visible in the chamber; lower angle; advance catheter fully off stylet.’,
+‘Release tourniquet. Apply digital pressure proximal to catheter tip. Retract stylet into safety mechanism.’,
+‘Connect needleless extension. Flush with 3–5 mL NS using push-pause (turbulent) technique. Confirm no resistance or swelling.’,
+‘Apply transparent sterile dressing. Label: date, time, catheter gauge, nurse initials.’,
+‘Document site, gauge, number of attempts, flushing, and patient tolerance.’,
+],
+warnings:[
+‘Inspect site every 4–8 h using the Visual Infusion Phlebitis (VIP) score; score ≥2 requires catheter removal.’,
+‘Change peripheral IV site every 72–96 hours or sooner if phlebitis or infiltration signs appear (INS 2021).’,
+‘Do NOT place catheter in arm with AV fistula, post-mastectomy lymphedema, active DVT, or ongoing IV infusion on same side.’,
+],
+notes:[
+‘Gauge selection: 18G for blood products; 20G for most adult patients; 22G for elderly or pediatric patients.’,
+‘Preferred sites: cephalic/basilic forearm veins (stable, low complication rate); dorsal hand as alternative.’,
+‘Difficult venous access: warm pack 5 min before insertion; low tourniquet pressure; bedside ultrasound guidance.’,
+],
+refs:[
+‘Infusion Nurses Society (INS). Infusion Therapy Standards of Practice (2021). J Infus Nurs. 44(1S):S1–S224.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). Wolters Kluwer. pp 435–444.’,
+‘Perry AG, Potter PA, Ostendorf WR. Clinical Nursing Skills & Techniques, 10th Ed (2022). Elsevier.’,
+]},
+
+{id:2,cat:‘iv’,icon:‘🧴’,title:‘IV Fluid Administration — Primary Infusion’,
+summary:‘Setting up and regulating prescribed IV fluid infusion via gravity or infusion pump.’,
+equipment:[‘Prescribed IV bag (verify: type, volume, additives, expiry)’,‘Primary IV administration set (gravity or pump-compatible)’,‘IV pole or infusion pump’,‘Alcohol swabs’,‘Time-strip label and pen’],
+steps:[
+‘Verify 5 Rights: Right Patient, Fluid/Drug, Dose/Volume, Route, Time.’,
+‘Inspect IV bag: clarity, absence of particulate matter, intact seal, correct expiry date.’,
+‘Close roller clamp. Remove port cover aseptically; insert IV spike fully.’,
+‘Hang bag on IV pole. Squeeze drip chamber 2–3 times to fill it halfway.’,
+‘Open clamp; prime tubing completely, purging ALL air bubbles. Re-close clamp.’,
+‘Scrub IV hub ≥15 s with alcohol; allow to dry. Connect primed tubing to patient's patent IV site.’,
+‘Gravity rate calculation: drops/min = (Volume mL × Drop Factor) ÷ Time in minutes.’,
+‘Infusion pump: enter volume (mL), rate (mL/h), and VTBI; confirm settings; second-nurse double-check for high-risk fluids.’,
+‘Label tubing with start date and time. Monitor site and patient response every 1–2 hours.’,
+‘Change IV tubing every 96 hours (standard set); every 24 hours for blood, lipid-containing, or propofol solutions.’,
+],
+warnings:[
+‘Never co-infuse incompatible solutions through the same lumen without NS flushing between them.’,
+‘Fluid overload signs: bibasilar crackles, JVD, new S3 gallop, dyspnea, pitting edema — reduce rate and notify physician immediately.’,
+‘D5W is hypo-osmolar — do NOT use as resuscitation fluid; contraindicated with elevated intracranial pressure (ICP).’,
+],
+notes:[
+‘NS (0.9% NaCl): isotonic; volume replacement; compatible with most IV medications.’,
+‘Lactated Ringer's (LR): closest to plasma composition; preferred for large-volume perioperative resuscitation.’,
+‘D5W: maintenance fluid and medication diluent; NOT for resuscitation.’,
+‘Flush IV site with 3 mL NS before and after each infusion session (INS 2021 standard).’,
+],
+refs:[
+‘INS Infusion Therapy Standards of Practice (2021). J Infus Nurs. 44(1S).’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 447–455.’,
+“Lynn P. Taylor’s Clinical Nursing Skills, 5th Ed (2019). Wolters Kluwer.”,
+]},
+
+{id:3,cat:‘iv’,icon:‘⚗️’,title:‘IV Piggyback (IVPB) Medication Administration’,
+summary:‘Administering a secondary IV medication bag via Y-site connection through an existing primary infusion line.’,
+equipment:[‘Secondary medication bag (pharmacy-prepared)’,‘Short secondary IV tubing set’,‘Primary IV infusion in progress’,‘Alcohol swab’,‘Medication and patient label’],
+steps:[
+‘Perform 5-Rights check. Verify drug-fluid and drug-drug compatibility using current pharmacy reference.’,
+‘Spike and prime secondary tubing. Hang secondary bag HIGHER than primary bag.’,
+‘Scrub the upper Y-port of primary tubing for ≥15 s with 70% alcohol; allow to dry ≥15 s.’,
+‘Connect secondary tubing to Y-port. Clamp primary line below Y-site if back-check valve absent.’,
+‘Set pump rate and VTBI for the secondary infusion.’,
+‘After secondary infusion completes: disconnect secondary tubing; restore primary line rate.’,
+‘Document drug, dose, rate, volume, time administered, and patient response in the MAR.’,
+],
+warnings:[
+‘Ceftriaxone + IV calcium is CONTRAINDICATED in neonates (fatal precipitation reported).’,
+‘Vancomycin: minimum infusion time 60 minutes per 1 g to prevent Red Man Syndrome (histamine-mediated flushing/hypotension).’,
+‘Never add medications to a hanging IV bag — risk of concentration error, precipitation, and drug degradation.’,
+],
+notes:[
+‘Secondary bag hangs higher than primary to deliver by gravity pressure differential.’,
+‘Flush with NS after IVPB completion to clear residual drug from tubing dead space.’,
+‘Standard IVPB concentrations are pre-mixed by pharmacy in unit-dose or batch-dose systems — verify label carefully.’,
+],
+refs:[
+‘Lippincott Nursing Procedures, 9th Ed (2022). Wolters Kluwer.’,
+‘ASHP Parenteral Admixture Technical Assistance Bulletin (2023). ashp.org.’,
+‘INS Standards of Practice — Section 22 (2021). J Infus Nurs.’,
+]},
+
+{id:4,cat:‘iv’,icon:‘🔬’,title:‘IV Push (Bolus) Medication Administration’,
+summary:‘Injecting a medication directly into an IV line over a prescribed safe time interval.’,
+equipment:[‘Labeled prepared medication syringe’,‘Two NS flush syringes (3–5 mL each)’,‘70% alcohol swab’,‘Non-sterile gloves’],
+steps:[
+‘Verify 7 Rights. Look up safe IV push rate in a current drug reference before proceeding.’,
+‘Confirm IV patency: flush with NS; observe for swelling, pain, or resistance.’,
+‘Scrub needleless connector hub ≥15 s with 70% alcohol; allow to dry ≥15 s (friction + drying time kills organisms).’,
+‘Pre-flush: inject NS to confirm access patency.’,
+‘Connect medication syringe; inject at prescribed rate (examples: furosemide ≤4 mg/min; metoprolol 5 mg over 5 min; morphine 2–4 mg/min; adenosine rapid push).’,
+‘Post-flush: inject NS volume equal to tubing dead space (3–5 mL) to clear residual drug.’,
+‘Monitor patient continuously during and ≥5–15 min after administration for adverse reactions.’,
+‘Document: drug, dose, route, rate, time given, and patient response in the MAR immediately.’,
+],
+warnings:[
+‘IV potassium UNDILUTED is FATAL — concentrated potassium must always be diluted and administered slowly via infusion pump.’,
+‘HIGH-ALERT drugs (insulin, heparin, opioids, concentrated electrolytes, neuromuscular blockers) require independent double-check by a second licensed nurse.’,
+‘Adenosine must be given as a RAPID push into the largest accessible vein closest to central circulation — half-life is only 10 seconds.’,
+],
+notes:[
+‘ISMP 2024 High-Alert Medication list: print and post at all medication preparation stations.’,
+‘Pre- and post-flushing confirms patency and prevents drug incompatibility reactions at Y-sites.’,
+‘Some agents require cardiac monitoring during IV push — always verify current clinical guidelines for the specific drug.’,
+],
+refs:[
+‘ISMP High-Alert Medications List (2024). ismp.org.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022).’,
+‘Institute for Healthcare Improvement (IHI) IV Medication Safety Guidelines (2023). ihi.org.’,
+]},
+
+// ═══════ AIRWAY MANAGEMENT ═══════
+{id:5,cat:‘airway’,icon:‘🫁’,title:‘Oropharyngeal Suctioning (Yankauer)’,
+summary:‘Clearing oropharyngeal secretions to maintain airway patency in patients unable to clear their own secretions.’,
+equipment:[‘Yankauer suction catheter’,‘Wall suction or portable suction unit’,‘Non-sterile gloves’,‘Face shield and goggles’,‘Sterile water for catheter rinsing’],
+steps:[
+‘Apply gloves and face shield/goggles. Explain procedure to conscious patient.’,
+‘Position in semi-Fowler's (30–45°) or lateral if unable to protect own airway.’,
+‘Set suction pressure: 80–120 mmHg adults; 60–100 mmHg children; 40–60 mmHg infants.’,
+‘Connect Yankauer to suction tubing; test suction before inserting into patient.’,
+‘Open patient's mouth; insert Yankauer catheter along the side toward the pharynx — do NOT apply suction during insertion.’,
+‘Apply suction on withdrawal with gentle rotating motion. Limit each suction pass to ≤15 seconds.’,
+‘Rinse catheter with sterile water between passes.’,
+‘Allow ≥30 s recovery between passes. Supplement O₂ if SpO₂ drops below 94%.’,
+‘Auscultate breath sounds post-suction. Document secretion amount, color, and consistency.’,
+],
+warnings:[
+‘Each suction pass must not exceed 15 seconds — prolonged suctioning causes hypoxia and vagal-mediated bradycardia.’,
+‘Stimulating the posterior pharynx may trigger vomiting — position patient laterally if aspiration risk is high.’,
+‘Yankauer is ORAL/PHARYNGEAL use only — do NOT advance into the trachea; use a dedicated tracheal suction catheter for that.’,
+],
+notes:[
+‘Suction only when clinically indicated (visible/audible secretions, SpO₂ decline, respiratory distress).’,
+‘For oral surgery or facial trauma patients: use extremely gentle technique to avoid injuring repair sites.’,
+‘Yankauer catheters are single-patient-use; change if visibly soiled or if catheter integrity is compromised.’,
+],
+refs:[
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 712–716.’,
+‘Perry AG et al. Clinical Nursing Skills & Techniques, 10th Ed (2022). Elsevier.’,
+‘AACN Practice Alert: Oral Care in the ICU (2017). Crit Care Nurse. 37(3).’,
+]},
+
+{id:6,cat:‘airway’,icon:‘🌬️’,title:‘Endotracheal (Tracheal) Suctioning — Open & Closed Circuit’,
+summary:‘Removing secretions from the ETT or tracheostomy tube to maintain airway patency in mechanically ventilated patients.’,
+equipment:[‘Sterile suction catheter (Fr size = ETT internal diameter mm × 2 ÷ 3) OR closed in-line suction system’,‘Sterile gloves (open system)’,‘Manual resuscitation bag (BVM) with O₂ source’,‘SpO₂ monitor’],
+steps:[
+‘Pre-oxygenate: increase FiO₂ to 100% for 30–60 s before suctioning.’,
+‘Open system: establish sterile field; apply sterile glove on dominant hand.’,
+‘Insert catheter gently into ETT WITHOUT applying suction until resistance is felt; withdraw 1 cm.’,
+‘Apply suction while withdrawing catheter in a continuous rotating motion. Duration: ≤10–15 s per pass.’,
+‘Reconnect to ventilator or O₂ source immediately. Allow ≥20–30 s recovery between passes.’,
+‘Limit to ≤3 suction passes per suctioning episode.’,
+‘Reassess: bilateral breath sounds, SpO₂, ventilator peak pressures, and patient comfort.’,
+‘Return FiO₂ to pre-suction setting. Document secretion characteristics and patient response.’,
+],
+warnings:[
+‘Closed-circuit (in-line) suction systems preferred: maintain PEEP, reduce aerosolization, lower VAP risk (AACN 2017).’,
+‘Routine NS instillation into ETT before suctioning is NOT recommended — increases VAP risk and induces acute desaturation.’,
+‘STOP immediately if: SpO₂ <90%, HR deviates >20 bpm from baseline, or significant arrhythmia develops.’,
+],
+notes:[
+‘Suction only when clinically indicated — not on a fixed schedule (AACN 2017 evidence-based recommendation).’,
+‘Closed suction catheter systems: change per manufacturer or hospital policy, typically every 24 hours.’,
+‘ETT cuff pressure must be maintained at 20–30 cmH₂O — check with aneroid cuff manometer every 8–12 hours.’,
+],
+refs:[
+‘AACN Practice Alert: Endotracheal Suctioning (2010, updated 2017). Am J Crit Care.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). Wolters Kluwer.’,
+‘Sole ML et al. (2017). Endotracheal Suctioning Practices. J Perianesth Nurs.’,
+]},
+
+{id:7,cat:‘airway’,icon:‘😮‍💨’,title:‘Oxygen Therapy — Nasal Cannula & Face Masks’,
+summary:‘Delivering supplemental oxygen at prescribed concentrations using the appropriate delivery device.’,
+equipment:[‘Nasal cannula OR face mask (simple/partial rebreather/non-rebreather/Venturi mask)’,‘Humidification bottle with sterile water (for flows >4 L/min)’,‘Oxygen flowmeter’,‘Oxygen wall source or cylinder’,‘Pulse oximeter’],
+steps:[
+‘Verify physician order: device type, flow rate (L/min) or target FiO₂, and target SpO₂ range.’,
+‘Connect flowmeter to oxygen source. Fill humidification bottle to fill line.’,
+‘Set prescribed flow rate before applying device to patient.’,
+‘Nasal cannula: curve prongs downward into nares; route tubing over ears; adjust slider under chin.’,
+‘Face mask: place over nose and mouth; mold nose clip; set flow rate before placing mask on patient.’,
+‘Assess SpO₂ and clinical response within 5–10 minutes of starting therapy.’,
+‘Reassess position, fit, and skin integrity under device every 2–4 hours.’,
+‘Document: device used, flow rate, SpO₂ before and after, and patient tolerance.’,
+],
+warnings:[
+‘COPD patients: target SpO₂ 88–92% — high FiO₂ can suppress hypoxic ventilatory drive and cause hypercapnia (BTS 2017).’,
+‘Non-rebreather mask: reservoir bag MUST remain inflated during inhalation — if bag collapses, increase flow rate immediately.’,
+‘Oxygen enriches atmosphere and significantly increases fire and explosion risk near ignition sources.’,
+],
+notes:[
+‘Nasal cannula: delivers ~24–44% FiO₂ at 1–6 L/min.’,
+‘Simple face mask: ~35–55% FiO₂ at 5–10 L/min.’,
+‘Non-rebreather mask: ~60–90% FiO₂ at 10–15 L/min.’,
+‘Venturi mask: precise, titrated FiO₂ (24–60%) via color-coded adapters — preferred device for COPD patients requiring controlled O₂.’,
+],
+refs:[
+“O’Driscoll BR et al. (2017). BTS Guideline for Oxygen Use in Adults in Healthcare and Emergency Settings. Thorax. 72(S1):ii1–ii90.”,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 577–582.’,
+‘WHO (2016). Oxygen Therapy for Children. WHO Press, Geneva.’,
+]},
+
+{id:8,cat:‘airway’,icon:‘🔧’,title:‘Tracheostomy Care & Tube Management’,
+summary:‘Maintaining tracheostomy tube patency, stoma integrity, safe inner cannula management, and emergency readiness.’,
+equipment:[‘Tracheostomy care kit (sterile basin, pipe cleaners, sterile gauze)’,‘Normal saline 0.9%’,‘Hydrogen peroxide 3% (for reusable inner cannula cleaning only)’,‘New trach holder/ties’,‘Suction equipment’,‘Sterile gloves’,‘Emergency: replacement trach (same size + one size smaller), obturator, 10 mL syringe, BVM’],
+steps:[
+‘Suction trach secretions BEFORE starting care to reduce risk during tube manipulation.’,
+‘Two-nurse technique is required for tie/holder changes — one stabilizes tube while other changes ties.’,
+‘Open sterile supplies; pour NS ± 50:50 H₂O₂/NS into basins.’,
+‘Don sterile gloves. Remove disposable inner cannula and discard; OR remove reusable inner cannula for cleaning.’,
+‘Clean reusable inner cannula with pipe cleaners in H₂O₂ solution; rinse thoroughly with NS; inspect for cracks.’,
+‘Reinsert inner cannula; lock securely into place (audible or tactile click confirmation).’,
+‘Clean stoma and outer flange: NS-moistened gauze in circular motion from stoma outward.’,
+‘Apply fresh sterile split-gauze dressing under the trach flange.’,
+‘Change ties: second nurse holds tube; first removes old ties ONLY AFTER new ties are secured; allow one finger-width space under ties.’,
+‘Document stoma appearance, secretion character and amount, cuff pressure (20–30 cmH₂O), and patient tolerance.’,
+],
+warnings:[
+‘Bedside emergency equipment MUST be present AT ALL TIMES: replacement trach (same + one smaller size), obturator, 10 mL syringe, BVM, suction.’,
+‘Accidental decannulation: maintain airway manually (apply O₂ over stoma), call for help IMMEDIATELY, do NOT leave patient.’,
+‘Do NOT apply H₂O₂ to healing granulation tissue — use NS only; H₂O₂ delays wound healing and may irritate tissue.’,
+],
+notes:[
+‘Perform trach care every 8 hours and PRN (soiled or wet dressing).’,
+‘Cuff pressure 20–30 cmH₂O — pressure above 30 cmH₂O causes tracheal mucosal ischemia and tracheomalacia over time.’,
+‘Humidification is MANDATORY for trach patients — the artificial airway bypasses the nose/pharynx which normally warms and humidifies air.’,
+],
+refs:[
+‘AARC Clinical Practice Guideline: Care of the Adult Patient with a Tracheostomy (2020). Respir Care.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 758–765.’,
+‘Morris LL et al. (2013). Tracheostomy Care and Complications in the ICU. J Perianesth Nurs.’,
+]},
+
+{id:9,cat:‘airway’,icon:‘🫀’,title:‘Bag-Valve-Mask (BVM) Manual Ventilation’,
+summary:‘Manually delivering positive-pressure ventilation during respiratory arrest, apnea, or pre-intubation.’,
+equipment:[‘Appropriately sized BVM device’,‘Oropharyngeal airway (OPA) and/or nasopharyngeal airway (NPA)’,‘O₂ source at ≥15 L/min’,‘Suction ready at bedside’,‘Second rescuer (preferred for two-hand technique)’],
+steps:[
+‘Confirm unresponsiveness and absent/inadequate breathing. Activate emergency response system.’,
+‘Position supine. Perform head-tilt chin-lift (jaw-thrust if C-spine injury suspected).’,
+‘Insert OPA (measure: corner of mouth to earlobe) to keep tongue off posterior pharynx.’,
+‘Connect BVM to O₂ source at 15 L/min.’,
+‘One-rescuer C-E grip: index finger and thumb form “C” over mask; remaining fingers form “E” under mandible; maintain neck extension.’,
+‘Two-rescuer technique (preferred): first rescuer holds mask with both thumbs on top and fingers under jaw; second rescuer squeezes bag.’,
+‘Deliver each breath over 1 second — deliver only until visible chest rise (~500–600 mL tidal volume).’,
+‘Rate: 10–12 breaths/min for adults in respiratory arrest; 20/min for infants; during CPR with advanced airway: 1 breath every 6 seconds asynchronously.’,
+],
+warnings:[
+‘Excessive tidal volume or rate causes gastric insufflation → vomiting → aspiration pneumonia.’,
+‘Over-ventilation during CPR impairs venous return and reduces coronary perfusion pressure (AHA 2020).’,
+‘Cricoid pressure (Sellick maneuver) is NOT routinely recommended per 2020 AHA Guidelines — may worsen ventilation.’,
+],
+notes:[
+‘Visible chest rise = adequate tidal volume (~6–8 mL/kg ideal body weight).’,
+‘No chest rise: reposition airway, check mask seal, consider foreign body obstruction.’,
+‘Two-rescuer ventilation provides better mask seal and greater tidal volume delivery — always use when staff available.’,
+],
+refs:[
+‘American Heart Association BLS Guidelines (2020). Circulation. 142(16 Suppl 2).’,
+‘Panchal AR et al. (2020). Part 3: Adult BLS. Circulation. 142:S366–S468.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022).’,
+]},
+
+{id:10,cat:‘airway’,icon:‘🌀’,title:‘Incentive Spirometry & Deep Breathing Exercises’,
+summary:‘Preventing postoperative atelectasis and promoting alveolar expansion through guided sustained maximal inspiration.’,
+equipment:[‘Incentive spirometer (volume-based or flow-based)’,‘Pillow for incision splinting (post-surgical patients)’,‘Documentation chart’],
+steps:[
+‘Assess: respiratory rate, SpO₂, breath sounds, and patient alertness before starting.’,
+‘Position patient upright: sitting at edge of bed or high-Fowler's (≥60°) for maximum diaphragmatic excursion.’,
+‘Demonstrate technique: exhale completely first; form a tight seal around mouthpiece.’,
+‘Instruct patient to inhale SLOWLY and DEEPLY to raise piston or ball to target marker.’,
+‘Hold breath at maximum inhalation for 3–5 seconds to allow alveolar recruitment.’,
+‘Exhale slowly through pursed lips. Rest 30 seconds between repetitions.’,
+‘Perform 10 repetitions every 1–2 hours while awake.’,
+‘Post-surgical patients: splint incision with pillow during deep breathing to reduce pain and facilitate full inspiration.’,
+‘Follow each IS session with an effective cough to mobilize loosened secretions.’,
+‘Document: volumes achieved per session and patient compliance.’,
+],
+warnings:[
+‘IS is ineffective in sedated, confused, or uncooperative patients — defer until patient can follow instructions.’,
+‘Rapid or excessive breaths cause hyperventilation and dizziness — slow down and rest between repetitions.’,
+‘IS alone does not adequately replace early ambulation post-surgery — ambulation is the highest-priority intervention.’,
+],
+notes:[
+‘Normal adult baseline IS volume: ~2,500–3,000 mL; post-surgical goal: 70–80% of pre-operative baseline.’,
+‘Volume-based spirometers (e.g., Coach 2) provide objective measurement; flow-based (ball type) are simpler.’,
+‘AARC 2011 guideline: IS has greatest benefit when part of a multi-component respiratory care program including ambulation and positioning.’,
+],
+refs:[
+‘AARC Clinical Practice Guideline: Incentive Spirometry (2011). Respir Care. 56(10):1600–1604.’,
+‘Freitas ER et al. (2012). IS vs. Deep Breathing Exercises Post-Surgery. Cochrane Database Syst Rev.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 398–403.’,
+]},
+
+// ═══════ WOUND & SKIN CARE ═══════
+{id:11,cat:‘wound’,icon:‘🩹’,title:‘Wound Dressing Change — Dry & Moist Dressings’,
+summary:‘Cleaning a wound and applying the appropriate dressing using aseptic non-touch technique (ANTT) to promote healing and prevent infection.’,
+equipment:[‘Non-sterile gloves (removal) + sterile gloves (application)’,‘Sterile gauze pads’,‘Normal saline for irrigation (30 mL syringe + 19G angiocath)’,‘Appropriate dressing per wound type (gauze, foam, hydrocolloid, alginate, etc.)’,‘Medical-grade adhesive tape’,‘Clean waste bag’],
+steps:[
+‘Hand hygiene. Gather supplies. Explain procedure; position patient for optimal access.’,
+‘Apply non-sterile gloves. Remove old dressing by peeling toward wound center. Observe exudate: amount, color, odor, consistency.’,
+‘Discard soiled dressing. Remove non-sterile gloves. Perform hand hygiene.’,
+‘Open sterile supplies using ANTT (aseptic non-touch technique). Pour NS into sterile basin.’,
+‘Apply sterile gloves.’,
+‘Assess wound using TIME framework: Tissue type (necrotic/granulating/epithelializing), Infection/Inflammation, Moisture balance, Edge advancement.’,
+‘Irrigate contaminated wounds with NS via 30 mL syringe + 19G angiocath at 8–15 psi (optimal cleansing pressure).’,
+‘Pat wound bed dry with sterile gauze.’,
+‘Select and apply appropriate dressing; secure with tape. Label with date, time, and nurse initials.’,
+‘Document wound assessment: dimensions (L × W × D), tissue type %, exudate amount/quality, periwound skin status, and dressing applied.’,
+],
+warnings:[
+‘Wound infection signs: erythema >2 cm from edge, increased warmth, purulent exudate, fever, malodor, or wound breakdown — notify provider promptly.’,
+‘Always clean from wound center outward — cleaning from dirty to clean area contaminates the wound.’,
+‘Dressing change frequency is determined by exudate level and dressing type — not a fixed daily schedule.’,
+],
+notes:[
+‘Moist wound healing is the evidence-based standard; “wet-to-dry” dressings for debridement are an OUTDATED practice (WOCN 2016).’,
+‘Wound measurement at each dressing change: compare to previous to assess progression or deterioration.’,
+‘Wound photography with ruler provides objective documentation — requires patient consent at most institutions.’,
+],
+refs:[
+‘WOCN Clinical Practice Guideline: Wound Management (2016). J Wound Ostomy Continence Nurs.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). Wolters Kluwer.’,
+‘Sibbald RG et al. (2021). Best Practice Recommendations for Prevention and Management of Wounds. Wound Care Canada.’,
+]},
+
+{id:12,cat:‘wound’,icon:‘🔴’,title:‘Pressure Injury — Assessment, Staging & Prevention’,
+summary:‘Systematically identifying, staging, measuring, and preventing pressure injuries using NPIAP classification and validated risk tools.’,
+equipment:[‘Braden Scale assessment tool’,‘Sterile flexible measuring ruler’,‘Wound documentation form and camera’,‘Repositioning wedges and foam positioners’,‘Pressure-redistributing mattress or overlay’,‘Skin barrier protectant’],
+steps:[
+‘Complete Braden Scale on admission and every 24–48 h (or per policy): score ≤18 = at risk; ≤12 = high risk.’,
+‘Full head-to-toe skin assessment on admission and every 8–12 hours thereafter.’,
+‘Stage using NPIAP 2019 Classification: Stage 1 (non-blanchable erythema, intact skin); Stage 2 (partial thickness skin loss/blister); Stage 3 (full thickness skin loss, adipose tissue visible); Stage 4 (exposed bone, tendon, or muscle); Unstageable (wound base obscured); Deep Tissue Injury (DTI); Mucosal Membrane PI.’,
+‘Measure: Length (head-to-toe axis) × Width (perpendicular) × Depth (gently probe with sterile swab). Document undermining and tunneling using clock-face positions.’,
+‘Implement repositioning schedule: every 2 hours in bed; every 1 hour in chair; use 30° lateral tilt wedge (preferred over 90° side-lying).’,
+‘Protect heels: elevate off mattress using pillow placed under calves — never use donut-shaped devices.’,
+‘Apply skin barrier product (zinc oxide, dimethicone, or liquid acrylate polymer) to intact at-risk periwound skin.’,
+‘Nutritional support: consult dietitian; protein goal 1.2–1.5 g/kg/day; micronutrient supplementation as indicated.’,
+],
+warnings:[
+‘Stage 3, 4, Unstageable, or DTI requires immediate provider notification and wound care specialist referral.’,
+‘Document ALL pre-existing PI at admission — failure to do so implies they are facility-acquired injuries (legal and quality implication).’,
+‘NEVER massage reddened bony prominences — this increases shear force and worsens ischemic injury to the underlying tissue.’,
+],
+notes:[
+‘Most common PI sites: sacrum > heels > ischial tuberosities > trochanters > lateral malleoli > occipital region.’,
+‘Stage 1 blanch test: press firm fingertip on erythema for 3 s; blanchable = reactive hyperemia (normal); non-blanchable = Stage 1 PI.’,
+‘Pressure-redistributing surfaces reduce interface pressure but do NOT eliminate the need for scheduled repositioning.’,
+],
+refs:[
+‘NPIAP (National Pressure Injury Advisory Panel). Prevention and Treatment of Pressure Ulcers/Injuries: Clinical Practice Guideline (2019). npiap.com.’,
+‘European Pressure Ulcer Advisory Panel (EPUAP) & PPPIA. International Clinical Practice Guideline (2019).’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 629–636.’,
+]},
+
+{id:13,cat:‘wound’,icon:‘✂️’,title:‘Suture & Staple Removal’,
+summary:‘Removing skin sutures or staples at the appropriate time after confirmed wound healing using aseptic technique.’,
+equipment:[‘Suture scissors (iris scissors) or staple remover’,‘Sterile forceps/pickups’,‘Alcohol swab’,‘Steri-Strips for additional support if needed’,‘Non-sterile gloves’,‘Gauze’],
+steps:[
+‘Verify physician order. Assess wound: edges approximated without separation, erythema, dehiscence, or drainage.’,
+‘Apply non-sterile gloves. Clean wound and surrounding skin with alcohol swab; allow to dry.’,
+‘Suture removal: grasp the suture knot with forceps; cut suture on ONE side close to the skin entry point.’,
+‘Pull suture thread through tissue TOWARD the wound — never drag the external (contaminated) portion back through the tissue track.’,
+‘Staple removal: center staple remover jaws under the staple crown; squeeze handles to evert staple ends; lift away from skin.’,
+‘Count all sutures/staples removed and confirm it matches total number documented at placement.’,
+‘Apply Steri-Strip closure strips across the wound line if additional support is needed.’,
+‘Inspect the final wound closure; document appearance, number removed, and patient tolerance.’,
+],
+warnings:[
+‘Do NOT remove if wound edges are separating, patient is on chronic steroids/immunosuppressants, or infection is suspected — consult provider.’,
+‘Pulling the contaminated external suture portion backward through tissue introduces surface bacteria into the wound track.’,
+‘Early removal (before healing time guidelines) increases dehiscence risk; late removal causes epithelial suture tracks and scarring.’,
+],
+notes:[
+‘Removal timing: Face 5–7 days; Scalp 7–10 days; Trunk/abdomen 7–10 days; Extremities 10–14 days; Joints 10–14 days; Foot 14+ days.’,
+‘Alternate suture removal (every other suture) is appropriate in high-tension areas to reduce dehiscence risk.’,
+‘Verify suture type before scheduling removal — absorbable sutures (Vicryl, Monocryl) do not require removal.’,
+],
+refs:[
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 661–665.’,
+‘Perry AG et al. Clinical Nursing Skills & Techniques, 10th Ed (2022). Elsevier.’,
+‘Singer AJ & Clark RAF (1999). Cutaneous Wound Healing. N Engl J Med. 341:738–746.’,
+]},
+
+{id:14,cat:‘wound’,icon:‘🌀’,title:‘Negative Pressure Wound Therapy (NPWT)’,
+summary:‘Applying controlled sub-atmospheric pressure to promote granulation, reduce wound edema, and manage exudate in complex wounds.’,
+equipment:[‘NPWT unit (e.g., KCI V.A.C. Ulta or Smith+Nephew PICO)’,‘Black polyurethane or white polyvinyl alcohol foam filler’,‘Transparent adhesive drape (film)’,‘Connecting tubing and suction disc/pad’,‘Sterile gloves and non-sterile gloves’],
+steps:[
+‘Obtain physician order: foam type (black = acute wounds; white = fragile/tunneling), pressure setting, and mode (continuous or intermittent).’,
+‘Assess wound bed, depth, tissue type, and periwound skin condition.’,
+‘Cut foam to fill wound bed dimensions — no overlap onto healthy periwound skin.’,
+‘Cover foam and 3–5 cm of periwound skin entirely with transparent adhesive drape; ensure completely airtight seal.’,
+‘Cut a 2 cm circle through the drape; attach suction disc/pad; connect tubing to NPWT unit.’,
+‘Set prescribed pressure (typically –125 mmHg continuous for most acute wounds; lower pressures for fragile tissue).’,
+‘Activate unit: foam should visibly contract within 30–60 seconds confirming adequate seal.’,
+‘Foam dressing change: every 48–72 hours (or more frequently if highly exudative or infected).’,
+‘At each change: COUNT all foam pieces removed; inspect wound bed, periwound skin, and document.’,
+],
+warnings:[
+‘NPWT is CONTRAINDICATED in: exposed blood vessels/nerves/anastomoses; malignancy within wound bed; untreated osteomyelitis; non-enteric fistulas; necrotic eschar prior to debridement.’,
+‘RETAINED FOAM is a serious complication — count all pieces removed; document piece count at every change.’,
+‘Do NOT apply foam filler directly to exposed organs, bowel, or fragile vascular anastomoses.’,
+],
+notes:[
+‘NPWT mechanisms: mechanical deformation stimulates cell proliferation; fluid removal reduces interstitial edema; increases local blood flow.’,
+‘Canister: change when full or at 7-day maximum to prevent bacterial overgrowth.’,
+‘Incisional (closed) NPWT: reduces SSI rate in high-risk post-surgical incisions (obese patients, contaminated wounds, cardiac surgery).’,
+],
+refs:[
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 804–811.’,
+‘Orgill DP et al. (2009). Mechanisms of Action of NPWT. Ann Surg. 250(6):898–904.’,
+‘WOCN (2017). Guideline for Management of Wounds in Patients with Lower-Extremity Venous Disease.’,
+]},
+
+// ═══════ CATHETERS & DRAINAGE ═══════
+{id:15,cat:‘cath’,icon:‘🔵’,title:‘Urinary Catheterization — Indwelling Foley (Male & Female)’,
+summary:‘Inserting an indwelling urinary catheter using strict sterile technique for continuous bladder drainage.’,
+equipment:[‘Foley catheter (14–18 Fr adult; 8–12 Fr pediatric)’,‘Sterile catheterization kit (drapes, basin, forceps, gauze, lubricant, specimen cup)’,‘10 mL syringe pre-filled with sterile water for balloon inflation’,‘Antiseptic solution (betadine or CHG)’,‘Closed urinary drainage bag with anti-reflux valve’],
+steps:[
+‘Verify physician order. Hand hygiene. Provide privacy; explain the procedure fully.’,
+‘Female: dorsal recumbent (frog-leg) position with adequate lighting. Male: supine, legs slightly apart.’,
+‘Open kit using strict sterile technique. Apply sterile drapes. Don sterile gloves.’,
+‘Pour antiseptic into basin. Coat catheter tip generously with lubricant (5 cm female; 15–20 cm male entire catheter length).’,
+‘Female cleansing: non-dominant hand separates labia and MAINTAINS POSITION THROUGHOUT. Cleanse urethral meatus with 3 antiseptic swabs: center → right → left (each swab used once only; never revisit).’,
+‘Male cleansing: retract foreskin (if intact) with non-dominant hand; MAINTAIN THROUGHOUT. Cleanse glans/meatus with expanding circular motion × 3 separate swabs.’,
+‘Insert catheter 5–7.5 cm (female) or 17–22 cm (male) until urine flows; advance 2–3 cm further before balloon inflation.’,
+‘Inflate balloon with 10 mL sterile water ONLY AFTER confirming urine return.’,
+‘Gently withdraw catheter until resistance confirms balloon is seated against bladder neck.’,
+‘Connect to closed drainage bag. Secure catheter to inner thigh (female) or lower abdomen (male). Bag must be below bladder. Label with insertion date.’,
+],
+warnings:[
+‘NEVER inflate balloon before urine return is confirmed — inflation in the urethra causes urethral rupture and severe pain.’,
+‘Never force catheter against resistance — obtain urology consultation for suspected obstruction (BPH, urethral stricture).’,
+‘Maintain closed drainage system at ALL times — system breach is the #1 preventable CAUTI risk (CDC).’,
+],
+notes:[
+‘CAUTI prevention bundle: aseptic insertion + closed drainage system + perineal hygiene twice daily + drainage bag below bladder + daily necessity review.’,
+‘Catheter-associated UTI (CAUTI) affects up to 36% of catheterized inpatients — most preventable HAI (CDC data).’,
+‘Use smallest appropriate catheter gauge; larger catheters increase urethral inflammation and CAUTI risk.’,
+],
+refs:[
+‘SUNA Clinical Practice Guideline: Female and Male Urethral Catheterization (2015). suna.org.’,
+‘CDC CAUTI Prevention Guidelines (2009, updated 2017). cdc.gov/nhsn.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 98–117.’,
+]},
+
+{id:16,cat:‘cath’,icon:‘🔹’,title:‘Intermittent (Straight) Urinary Catheterization’,
+summary:‘Temporary catheter insertion to measure post-void residual, drain the bladder, or obtain a sterile urine specimen.’,
+equipment:[‘Robinson (straight) catheter (same sizing as Foley)’,‘Sterile gloves + sterile drape’,‘Antiseptic solution’,‘Water-soluble lubricant’,‘Sterile specimen cup if ordered’],
+steps:[
+‘Verify order and indication: urinary retention, post-void residual measurement, or sterile specimen collection.’,
+‘Perform hand hygiene. Assemble sterile field.’,
+‘Cleanse urethral meatus using same antiseptic technique as indwelling catheterization (see Procedure #15).’,
+‘Insert catheter until urine flows. Collect sterile specimen first if ordered.’,
+‘Allow complete bladder drainage; gently withdraw catheter once flow ceases.’,
+‘If PVR >300 mL: consider leaving catheter in place as indwelling; notify provider.’,
+‘Document: volume drained, urine characteristics (color, clarity, odor), and patient tolerance.’,
+],
+warnings:[
+‘Bladder ultrasound (portable scanner) is the non-invasive preferred method to estimate PVR before deciding on catheterization.’,
+‘PVR consistently >150–200 mL on 2 separate occasions suggests incomplete emptying — discuss scheduled intermittent catheterization (IC) program with provider.’,
+‘Repeated catheterizations >4× daily without clear indication increase urethral trauma and UTI risk.’,
+],
+notes:[
+‘PVR normal: <50 mL; borderline: 50–100 mL; clinically significant: >150 mL.’,
+‘Intermittent catheterization (IC) is the preferred long-term management for neurogenic bladder — significantly lower CAUTI rate than indwelling catheter.’,
+‘IC schedule for SCI patients: typically every 4–6 hours adjusted to fluid intake and measured residual volumes.’,
+],
+refs:[
+‘SUNA Clinical Practice Guidelines (2015). suna.org.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022).’,
+‘Hooton TM et al. (2010). IDSA Guidelines for Diagnosis and Treatment of CAUTI. Clin Infect Dis. 50(5):625–663.’,
+]},
+
+{id:17,cat:‘cath’,icon:‘💧’,title:‘Continuous Bladder Irrigation (CBI)’,
+summary:‘Irrigating the bladder continuously with normal saline to prevent clot retention after urological procedures.’,
+equipment:[‘3-way Foley catheter (for CBI) or 2-way for manual irrigation’,‘Sterile irrigation solution (0.9% NaCl only)’,‘CBI administration set and IV pole’,‘60 mL syringe (for manual irrigation)’,‘Urometer/measuring container’],
+steps:[
+‘Verify order: CBI versus intermittent manual irrigation, solution type, and target outflow color.’,
+‘For CBI: spike irrigation bag with CBI tubing; prime tubing; connect to irrigation port (3rd lumen) of 3-way Foley.’,
+‘Regulate CBI rate to maintain outflow that is light pink/rose-colored (typical starting rate: 200–300 mL/h adjusted to output color).’,
+‘For manual irrigation: draw 30–50 mL NS into 60 mL syringe; cleanse catheter irrigation port with alcohol.’,
+‘Insert syringe; instill NS gently; allow to drain by gravity. If resistance: do NOT force — notify provider.’,
+‘Measure and document EVERY HOUR: irrigation input and drainage output.’,
+‘Calculate true urine output: Drainage volume − Irrigation volume instilled = True urinary output.’,
+],
+warnings:[
+‘Absent or reduced drainage with continued irrigation input = possible clot obstruction or bladder perforation — notify urologist immediately.’,
+‘Dark red/bright blood in drainage not clearing with increased CBI rate — notify urologist; do NOT further increase rate.’,
+‘Discrepancy between input and output exceeding expected volumes may indicate bladder perforation or catheter displacement.’,
+],
+notes:[
+‘CBI is indicated after: TURP, bladder tumor resection, hemorrhagic cystitis, urethral surgery.’,
+‘True urine output calculation is ESSENTIAL for accurate fluid balance documentation in post-operative patients.’,
+‘If CBI is discontinued: monitor for clot retention and urinary retention for 2–4 hours post-discontinuation.’,
+],
+refs:[
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 122–128.’,
+‘Perry AG et al. Clinical Nursing Skills & Techniques, 10th Ed (2022). Elsevier.’,
+]},
+
+// ═══════ VITAL SIGNS & MONITORING ═══════
+{id:18,cat:‘vitals’,icon:‘📊’,title:‘Complete Vital Signs Assessment’,
+summary:‘Accurately measuring and interpreting temperature, pulse, respirations, blood pressure, and oxygen saturation.’,
+equipment:[‘Thermometer (oral/tympanic/temporal artery/rectal/axillary)’,‘Sphygmomanometer with stethoscope OR automated NIBP’,‘Watch with second hand’,‘Pulse oximeter probe’,‘NEWS2 or hospital early warning score form’],
+steps:[
+‘Ensure patient at rest for ≥5 minutes before blood pressure measurement.’,
+‘Temperature: select appropriate route. Normal oral: 36.5–37.5°C (97.8–99.5°F); add 0.5°C for axillary readings; rectal is the most accurate core temperature measurement.’,
+‘Radial Pulse: palpate radial artery with 2–3 fingertips for a full 60 seconds. Assess rate, rhythm (regular/irregular), amplitude, and bilateral equality.’,
+‘Respirations: observe chest excursions for 60 seconds while appearing to count pulse (do NOT announce to patient — alters rate). Note rate, depth, regularity, and work of breathing.’,
+‘Blood pressure: apply appropriate cuff size, 2–3 cm above antecubital fossa. Inflate 30 mmHg above disappearance of radial pulse; deflate at 2–3 mmHg/s. Record Korotkoff I (systolic) and V (diastolic) sounds.’,
+‘SpO₂: apply pulse oximetry probe to index finger; confirm clean, unpolished nail; wait for stable waveform before recording.’,
+‘Apply early warning score (NEWS2): calculate total; escalate care per institutional protocol if triggered.’,
+‘Document all values with time, patient position, and clinical context.’,
+],
+warnings:[
+‘Do NOT take BP on arm with IV infusion, PICC line, AV fistula, lymphedema, or post-mastectomy on that side.’,
+‘Atrial fibrillation produces an irregular radial pulse — count apical pulse with stethoscope for 60 s for accuracy.’,
+‘SpO₂ unreliable in: nail polish, vasoconstriction, severe anemia, motion artifact, and CO poisoning (falsely normal reading).’,
+],
+notes:[
+‘Normal adult ranges: HR 60–100 bpm; RR 12–20/min; BP <120/80 mmHg; Temp 36.5–37.5°C; SpO₂ ≥95%.’,
+‘Orthostatic blood pressure: measure supine → sitting → standing after 1–3 min in each position. Drop ≥20 mmHg systolic = orthostatic hypotension.’,
+‘COPD target SpO₂: 88–92% per BTS and ATS guidelines — avoid exceeding 92% in stable COPD patients.’,
+],
+refs:[
+‘Whelton PK et al. (2017). 2017 ACC/AHA Hypertension Guidelines. J Am Coll Cardiol. 71(19):e127–e248.’,
+‘Royal College of Physicians. National Early Warning Score 2 (NEWS2) (2017). rcplondon.ac.uk.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022).’,
+]},
+
+{id:19,cat:‘vitals’,icon:‘⚡’,title:‘12-Lead ECG Acquisition’,
+summary:‘Performing a 12-lead ECG with precise electrode placement for accurate cardiac rhythm and ischemia analysis.’,
+equipment:[‘12-lead ECG machine’,‘10 electrodes (4 limb + 6 precordial)’,‘Pre-gelled disposable electrode patches’,‘Razor (for chest hair if present)’,‘Alcohol wipes for skin preparation’],
+steps:[
+‘Explain procedure. Position patient supine, warm, and as relaxed as possible.’,
+‘Expose chest, wrists, and ankles. Shave or clip chest hair over precordial electrode sites if needed.’,
+‘Clean each electrode application site with alcohol wipe; allow to fully dry (reduces impedance).’,
+‘Limb electrodes: RA → right wrist or upper arm; LA → left wrist or upper arm; RL → right ankle or leg; LL → left ankle or leg.’,
+‘Precordial (V lead) placement: V1 → 4th ICS right sternal border; V2 → 4th ICS left sternal border; V3 → midway between V2 and V4; V4 → 5th ICS midclavicular line; V5 → anterior axillary line (same horizontal level as V4); V6 → midaxillary line (same level as V4–V5).’,
+‘Apply electrode patches firmly with no air gaps. Connect color-coded lead wires.’,
+‘Instruct: “Stay still and breathe normally.” Acquire tracing.’,
+‘Review all 12 leads for clarity. Repeat acquisition if artifact is present.’,
+‘Print/transmit; document patient ID, date, time, clinical indication.’,
+‘Notify provider IMMEDIATELY if STEMI pattern, complete heart block, or malignant arrhythmia identified.’,
+],
+warnings:[
+‘Lead reversal (e.g., RA and LA switched) produces pseudo-infarction patterns and can lead to incorrect diagnosis and treatment.’,
+‘Shivering and 60-Hz AC interference produce artifact mimicking ventricular arrhythmias — assess patient clinically before initiating any emergency response.’,
+‘STEMI: door-to-balloon time goal <90 minutes — activate cardiac catheterization lab immediately upon ECG recognition.’,
+],
+notes:[
+‘V lead placement mnemonic: “Start at the sternum (V1, V2), find the midclavicular (V4), then follow the axillary line (V5, V6).”’,
+‘AHA US color coding: White=RA, Black=LA, Green=RL, Red=LL, Brown/Multi=V leads.’,
+‘QTc >500 ms with QT-prolonging drugs (haloperidol, azithromycin, methadone, fluoroquinolones) requires urgent cardiology input.’,
+],
+refs:[
+‘Surawicz B et al. (2009). AHA/ACCF/HRS Recommendations for the Standardization of ECG Interpretation. J Am Coll Cardiol. 53(11):976–981.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022).’,
+“Thaler MS. The Only EKG Book You’ll Ever Need, 9th Ed (2018). Wolters Kluwer.”,
+]},
+
+{id:20,cat:‘vitals’,icon:‘📈’,title:‘Pain Assessment Using Validated Scales’,
+summary:‘Systematically assessing, documenting, and reassessing pain using validated tools to guide individualized analgesia.’,
+equipment:[‘NRS 0–10 scale (verbal adults)’,‘Wong-Baker FACES scale (children ≥3 years, cognitively impaired)’,‘Critical Care Pain Observation Tool (CPOT) for intubated/non-verbal adults’,‘FLACC scale (infants, non-verbal children <7 years)’,‘Documentation record’],
+steps:[
+‘Assess pain at: admission, every vital signs cycle, before and after analgesic interventions, and with clinical change.’,
+‘Use OLDCART: Onset, Location, Duration, Character, Aggravating factors, Relieving factors, Temporal pattern.’,
+‘NRS: “On a scale of 0 to 10, where 0 is no pain and 10 is the worst possible pain, what is your pain right now?”’,
+‘CPOT (intubated/non-verbal): score 4 domains: Facial Expression (0–2) + Body Movements (0–2) + Ventilator Compliance (0–2) + Muscle Tension (0–2). Total 0–8; score ≥3 = significant pain.’,
+‘Assess pain at REST and with movement/activity (functional pain is most clinically relevant for recovery).’,
+‘Reassess: 30–60 min after IV/IM analgesic; 60–90 min after oral/SC analgesic.’,
+‘Set a patient-specific functional pain goal (e.g., “pain ≤3 to turn in bed; ≤4 to ambulate”).’,
+‘Document: scale used, numeric score, location, intervention given, and reassessment score.’,
+],
+warnings:[
+‘Undertreated pain causes physiological stress: tachycardia, hypertension, splinting → atelectasis, PE, impaired wound healing.’,
+‘Opioid monitoring: use Pasero Opioid-Induced Sedation Scale (POSS) + respiratory rate before each dose; HOLD if RR <10/min or POSS score 3–4.’,
+‘Never dismiss pain in cognitively impaired, behaviorally stoic, or culturally reserved patients — observe behavioral cues and physiological indicators.’,
+],
+notes:[
+‘Self-report is the gold standard for pain assessment when the patient can communicate.’,
+‘Multimodal analgesia (NSAIDs + acetaminophen + opioid + adjuvants) reduces opioid consumption by 30–50% (ERAS Society protocols).’,
+‘Non-pharmacological interventions: repositioning, heat/cold application, distraction, guided imagery, relaxation breathing, music therapy.’,
+],
+refs:[
+‘Pasero C & McCaffery M (2011). Pain Assessment and Pharmacological Management. St. Louis: Elsevier Mosby.’,
+‘Gelinas C et al. (2006). CPOT: Development and Validation in ICU Patients. Am J Crit Care. 15(4):420–427.’,
+‘The Joint Commission Pain Management Standards (2018). jointcommission.org.’,
+]},
+
+{id:21,cat:‘vitals’,icon:‘🖥️’,title:‘Continuous Cardiac Monitoring Setup’,
+summary:‘Applying electrodes and configuring a bedside or telemetry cardiac monitor for continuous rhythm surveillance.’,
+equipment:[‘3-lead or 5-lead electrode set’,‘Pre-gelled disposable adhesive electrodes’,‘Bedside cardiac monitor or telemetry transmitter’,‘Alcohol prep pads’,‘Light skin abrasive pad if needed’],
+steps:[
+‘Explain continuous monitoring to patient. Provide privacy during electrode application.’,
+‘Prepare skin: clean with alcohol, allow to dry; abrade lightly if poor signal anticipated.’,
+‘3-lead placement: RA (white) → right subclavicular area; LA (black) → left subclavicular area; LL (red) → left lower ribs.’,
+‘5-lead adds: RL (green) → right lower ribs (electrical ground); V (brown) → V1 position (4th ICS, right sternal border).’,
+‘AHA color code: White=RA; Black=LA; Red=LL; Green=RL; Brown=V.’,
+‘Power on monitor. Select lead with clearest P wave and QRS (usually Lead II for most patients).’,
+‘Set individualized alarm limits for HR high and low. Test alarm functionality.’,
+‘Document baseline rhythm strip in nursing notes. Reapply rhythm strip every 8 hours and with clinical changes.’,
+‘Respond to EVERY alarm — assess patient before silencing any alarm.’,
+],
+warnings:[
+‘Alarm fatigue is a critical patient safety issue (TJC Sentinel Event Alert, 2013) — alarm silence without patient assessment has caused preventable cardiac arrest deaths.’,
+‘Change electrodes every 24–48 hours — dried gel reduces adhesion and creates artifact that can mimic life-threatening rhythms.’,
+‘Paced rhythms may not trigger rate alarms if pacemaker spikes are not detected — verify pacemaker capture separately.’,
+],
+notes:[
+‘Lead II provides best P-wave visibility for rhythm identification; V1 or MCL-1 best for morphology differentiation (SVT vs. VT).’,
+‘VF on monitor: immediately ASSESS PATIENT before initiating CPR — confirm it is not artifact from patient movement.’,
+‘AHA 2004 ECG Monitoring Standards remain the reference for lead placement in all monitored settings.’,
+],
+refs:[
+‘Drew BJ et al. (2004). AHA Practice Standards for ECG Monitoring in Hospital Settings. Circulation. 110(17):2721–2746.’,
+‘AACN Practice Alert: Alarm Management (2013). Crit Care Nurse. 33(5).’,
+‘Lippincott Nursing Procedures, 9th Ed (2022).’,
+]},
+
+// ═══════ MEDICATION ADMINISTRATION ═══════
+{id:22,cat:‘meds’,icon:‘💊’,title:‘The 7 Rights of Medication Administration’,
+summary:‘Systematic safety verification framework applied before every medication administration to prevent errors and harm.’,
+equipment:[‘Medication Administration Record (MAR)’,‘Patient identification wristband’,‘Current drug reference (electronic or print)’,‘BCMA barcode scanner (if available)’],
+steps:[
+‘① Right PATIENT: verify using TWO identifiers — full name + date of birth, or full name + MRN. Scan barcode if BCMA available. Ask patient to state their name — never prompt with the correct answer.’,
+‘② Right MEDICATION: read drug label at THREE checkpoints — retrieving from storage, preparing/drawing up, and at the bedside. NEVER administer a medication drawn up by another nurse.’,
+‘③ Right DOSE: calculate dose independently. For weight-based dosing, verify patient weight in kg. Perform independent double-check for HIGH-ALERT medications.’,
+‘④ Right ROUTE: confirm route on MAR matches patient's clinical state — can patient swallow? Is IV access patent and appropriate? Is IM site appropriate?’,
+‘⑤ Right TIME: administer within ±60 minutes of scheduled time (or per policy). Identify time-critical medications: STAT orders, antibiotic first doses, insulin, thrombolytics.’,
+‘⑥ Right DOCUMENTATION: document in MAR IMMEDIATELY AFTER administration — never document before. Record time, dose, route, and nurse signature.’,
+‘⑦ Right REASON: know the pharmacological rationale. Question orders inconsistent with clinical presentation — this is a professional and legal safety responsibility.’,
+‘Always check ALLERGY status before administering any new or unfamiliar medication.’,
+],
+warnings:[
+‘HIGH-ALERT drugs (insulin, heparin, opioids, neuromuscular blockers, concentrated electrolytes, anticoagulants) require independent double-check by a second licensed nurse.’,
+‘Verbal orders must be written and countersigned by the ordering provider within 24 hours (TJC Medication Management Standard).’,
+‘NEVER crush enteric-coated (EC), sustained-release (SR/XR/XL/CR/LA/ER), sublingual, or buccal formulations.’,
+],
+notes:[
+‘BCMA (Barcode Medication Administration) systems reduce wrong-patient and wrong-drug errors by ~85% (IHI data).’,
+‘Medication refused or withheld: document reason in MAR and notify prescriber promptly.’,
+‘Patient education at each administration: state drug name, purpose, and key adverse effects.’,
+],
+refs:[
+‘The Joint Commission Medication Management Standards (2024). jointcommission.org.’,
+‘ISMP Principles of Error-Proof Medication Preparation (2023). ismp.org.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 504–511.’,
+]},
+
+{id:23,cat:‘meds’,icon:‘💉’,title:‘Intramuscular (IM) Injection’,
+summary:‘Administering medication into deep muscle tissue for predictable systemic absorption using correct site selection and technique.’,
+equipment:[‘Syringe (1–3 mL) + needle (21–23G, 2.5–3.8 cm / 1–1.5 in for standard adult)’,‘Prescribed medication’,‘Alcohol swab’,‘Dry gauze’,‘Non-sterile gloves’,‘Safety-engineered sharps container’],
+steps:[
+‘Verify 7 Rights. Hand hygiene. Apply non-sterile gloves.’,
+‘Select injection site: Ventrogluteal (VG) is the safest preferred site for adults.’,
+‘VG landmark: place palm on greater trochanter; index finger on ASIS; middle finger extended toward iliac crest — inject into the V-shaped space between the fingers.’,
+‘Vastus lateralis (alternative for infants, small children, or when VG inaccessible): middle third of the anterior-lateral thigh.’,
+‘Deltoid (for volumes ≤1–2 mL only): 2–3 finger-widths below acromion process, outer lateral arm.’,
+‘Cleanse site with alcohol swab; allow to dry fully (≥30 s minimum).’,
+‘For Z-track technique (irritating medications): retract skin laterally 2.5–3.5 cm; maintain retraction throughout injection; release after needle withdrawal.’,
+‘Insert needle at 90° with a smooth, swift motion. Current evidence does NOT recommend routine aspiration for standard IM sites (WHO 2015; AHA 2020).’,
+‘Inject at ~1 mL per 10 seconds. Withdraw needle at same angle. Apply gentle gauze pressure — do NOT rub.’,
+‘Activate safety mechanism; discard directly into sharps container without recapping. Document site, dose, and time.’,
+],
+warnings:[
+‘AVOID dorsogluteal site — high risk of sciatic nerve injury and superior gluteal artery damage; VG is safer in all adults.’,
+‘Never inject into areas of inflammation, infection, edema, hematoma, or scar tissue.’,
+‘Epinephrine for anaphylaxis: anterolateral outer thigh (vastus lateralis) is the preferred injection site — NOT the deltoid.’,
+],
+notes:[
+‘Maximum volumes: deltoid 1–2 mL; vastus lateralis 1–5 mL adult; VG 2–5 mL adult.’,
+‘Z-track technique reduces medication leakage to superficial tissues and decreases injection site irritation — recommended for iron dextran, certain vaccines.’,
+‘Vaccines: deltoid preferred for adults ≥19 years; vastus lateralis for infants and toddlers < 3 years.’,
+],
+refs:[
+‘WHO (2015). Best Practices for Injections and Related Procedures Toolkit. WHO Press.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 527–537.’,
+‘CDC (2020). Vaccine Administration: General Best Practice Guidelines. cdc.gov/vaccines.’,
+]},
+
+{id:24,cat:‘meds’,icon:‘🖐️’,title:‘Subcutaneous (SC/SQ) Injection’,
+summary:‘Injecting medication into subcutaneous tissue for slow, consistent systemic absorption (insulin, heparin, LMWH, biologics).’,
+equipment:[‘25–27G needle, 1–1.5 cm (3/8–5/8 in)’,‘1–3 mL syringe’,‘Prescribed medication’,‘Alcohol swab’,‘Non-sterile gloves’],
+steps:[
+‘Verify 7 Rights. Apply non-sterile gloves.’,
+‘Select and rotate injection sites systematically: abdomen (>5 cm from umbilicus preferred for insulin and LMWH); anterior thigh; posterior upper arm; scapular region.’,
+‘For insulin: use a consistent rotation map within each region to maintain predictable absorption kinetics.’,
+‘Cleanse with alcohol swab; allow to dry fully (≥30 s).’,
+‘Gently pinch a 2–5 cm skin fold between thumb and forefinger (non-dominant hand).’,
+‘Insert needle at 45° for lean patients or short needles; 90° for adequate subcutaneous tissue.’,
+‘Release skin pinch. Inject at a steady, slow rate.’,
+‘Withdraw needle. For heparin/LMWH: do NOT massage site (causes bruising and alters absorption).’,
+‘Activate safety mechanism; discard into sharps container. Document site used, dose, and relevant monitoring values (glucose for insulin).’,
+],
+warnings:[
+‘Lipohypertrophy: firm nodules from repetitive injection in same spot — do NOT inject into nodular areas; insulin absorption is highly unpredictable in lipohypertrophied tissue.’,
+‘Enoxaparin (Lovenox) pre-filled syringes: do NOT expel the air bubble — it is intentional to flush residual drug from the needle tip after injection.’,
+‘NEVER shake insulin vials — denatures protein and decreases potency; gently roll NPH or premixed insulins between palms.’,
+],
+notes:[
+‘SC absorption speed: abdomen (fastest) > arm > thigh > scapular/buttock (slowest) — affects insulin action onset timing.’,
+‘Glargine, detemir, degludec (long-acting insulins): SC ONLY; NEVER IV; no pronounced peak; once-daily dosing.’,
+‘Lipohypertrophy affects 20–40% of insulin users — inspect injection sites at every diabetes-related assessment.’,
+],
+refs:[
+‘American Diabetes Association (2023). Standards of Medical Care in Diabetes — Insulin Administration. Diabetes Care. 46(Suppl 1).’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 521–527.’,
+‘RNAO (2004). Subcutaneous Administration of Insulin: Evidence-Based Practice Guideline.’,
+]},
+
+{id:25,cat:‘meds’,icon:‘🩺’,title:‘Insulin Administration & Capillary Blood Glucose Monitoring’,
+summary:‘Monitoring blood glucose and safely administering insulin with mandatory independent double-check and systematic site rotation.’,
+equipment:[‘Glucometer + test strips + lancet device’,‘Blood glucose log or EHR record’,‘Insulin syringe or insulin pen + pen needle’,‘Prescribed insulin (verify TYPE precisely)’,‘Alcohol swab’],
+steps:[
+‘Hand hygiene. Verify physician order: insulin TYPE (rapid-acting/long-acting), DOSE, and TIMING relative to meals.’,
+‘Blood glucose check: insert test strip; clean lateral fingertip with alcohol; allow to dry; apply lancet; touch blood drop to test strip edge; record result.’,
+‘Compare result to sliding scale or basal-bolus order; calculate dose. Verify dose against order before drawing up.’,
+‘Mandatory independent double-check with second licensed nurse for: insulin >5 units, IV insulin infusions, or variance from standard protocol.’,
+‘Prepare insulin: gently roll NPH or premixed insulin between palms (do NOT shake); NEVER mix insulin glargine, detemir, or degludec with any other insulin.’,
+‘Administer SC at appropriate site with documented rotation plan.’,
+‘Rapid-acting (lispro, aspart, glulisine): administer within 15 minutes of meal commencement — patient MUST have meal ready.’,
+‘Monitor for hypoglycemia: tremor, diaphoresis, pallor, palpitations, confusion. Check glucose if any symptom appears.’,
+‘Hypoglycemia (BG <70 mg/dL): Rule of 15 → give 15 g rapid-acting carbohydrate → recheck in 15 min → repeat if still <70.’,
+‘Document: glucose result, insulin type and dose, injection site, and post-dose response or hypoglycemic event.’,
+],
+warnings:[
+‘NEVER administer insulin without a current blood glucose reading immediately prior — glucose levels can change rapidly.’,
+‘Insulin pens are SINGLE-PATIENT USE ONLY — sharing a pen between patients transmits bloodborne pathogens (HIV, hepatitis B/C).’,
+‘LASA insulin error: Novolog (aspart) vs. Novolin (human regular); Humalog (lispro) vs. Humulin — store separately, label clearly, and perform double-check.’,
+],
+notes:[
+‘Open insulin vials: stable at room temperature ≤25°C for 28 days; unopened vials/pens: refrigerate 2–8°C; protect from light and heat.’,
+‘CGM (continuous glucose monitors) do not replace confirmatory fingerstick for dosing decisions (FDA guidance).’,
+‘Nocturnal hypoglycemia risk: highest 2–4 hours after evening long-acting insulin injection — educate patients on bedtime snack strategy.’,
+],
+refs:[
+‘American Diabetes Association (2023). Standards of Medical Care in Diabetes. Diabetes Care. 46(Suppl 1).’,
+‘ISMP (2023). Preventing Insulin Errors. ismp.org.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 531–540.’,
+]},
+
+{id:26,cat:‘meds’,icon:‘💊’,title:‘Oral Medication Administration’,
+summary:‘Safely preparing and administering oral solid and liquid medications while preventing aspiration and polypharmacy errors.’,
+equipment:[‘Medication Administration Record (MAR)’,‘Medication cup and cup for water’,‘≥100 mL water or prescribed vehicle’,‘Pill crusher or tablet splitter (verify appropriateness first)’,‘Oral/enteral syringe for liquids’],
+steps:[
+‘Hand hygiene. Review MAR and complete 7 Rights at the medication preparation area.’,
+‘Keep each medication in its original packaging until moment of administration.’,
+‘Do NOT crush: enteric-coated (EC), sustained-release (SR/XR/XL/CR/LA/ER), sublingual, buccal, effervescent, or chewable formulations.’,
+‘Identify patient with 2 identifiers at bedside. Scan BCMA barcode if available.’,
+‘Elevate HOB to ≥30° (optimally 60–90° — seated upright) before administration to minimize aspiration risk.’,
+‘Offer ≥100–120 mL of water with most oral medications. Explain each drug: name, purpose, and key side effects.’,
+‘Observe patient swallow all medications; remain at bedside until consumed.’,
+‘Assess for desired pharmacological effect and adverse reactions at appropriate time intervals.’,
+‘Document in MAR immediately after administration.’,
+],
+warnings:[
+‘NPO patients: confirm with prescriber which medications are permitted with a minimal sip of water and which must be held.’,
+‘Grapefruit and grapefruit juice inhibit CYP3A4 — contraindicated with many drugs including simvastatin, cyclosporine, amlodipine, tacrolimus, and sildenafil.’,
+‘Dysphagia: consult speech therapy for swallowing evaluation and use IDDSI-framework thickened fluids as specified.’,
+],
+notes:[
+‘Time-sensitive oral medications: levothyroxine 30 min before breakfast; bisphosphonates 30 min before first food with full water glass; metformin with meals; PPIs 30 min before first meal.’,
+‘Pre-administration parameter checks: digoxin → apical HR (hold if <60); warfarin → current INR; ACE inhibitors → creatinine and K⁺.’,
+‘ISMP Do-Not-Crush list 2023 — print and post at medication preparation stations.’,
+],
+refs:[
+‘ISMP (2023). Do Not Crush Medication List. ismp.org.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 512–521.’,
+‘IHI Medication Reconciliation Best Practices (2023). ihi.org.’,
+]},
+
+// ═══════ NUTRITION & ENTERAL TUBES ═══════
+{id:27,cat:‘feed’,icon:‘🧃’,title:‘Nasogastric Tube (NGT) Insertion & Placement Verification’,
+summary:‘Inserting a nasogastric tube for enteral feeding, decompression, or medication delivery with mandatory radiographic placement confirmation.’,
+equipment:[‘NGT (14–18 Fr adult; 8 Fr pediatric)’,‘Water-soluble lubricating gel’,‘pH indicator strips (colorimetric)’,‘60 mL ENFit or catheter-tip syringe’,‘Tape or commercial nasal adhesive device’,‘Cup of water with straw (for swallowing assistance)’,‘Penlight for oral inspection’,‘Suction equipment ready’],
+steps:[
+‘Assess: nares patency (occlude each nostril separately), swallowing ability, LOC, and gag reflex. Explain procedure.’,
+‘Position: high-Fowler's (60–90°) if tolerated.’,
+‘Measure tube length: NOSE → EARLOBE → XIPHOID PROCESS + 10 cm. Mark with tape.’,
+‘Lubricate first 10 cm of tube with water-soluble gel.’,
+‘Insert through more patent nostril, directing DOWNWARD and BACKWARD along the nasal floor (NOT upward toward the cribriform plate).’,
+‘When tube enters posterior pharynx: instruct patient to flex chin to chest and swallow continuously; advance tube with each swallow. Cup of water with straw facilitates swallowing.’,
+‘Advance tube to marked length. If patient coughs violently, vocalizes, or SpO₂ drops — STOP; withdraw; re-attempt.’,
+‘MANDATORY CHEST X-RAY before any feeding or medication instillation. Tip must be visible ≥10 cm below the gastroesophageal junction in the stomach.’,
+‘Secondary pH check: aspirate gastric contents; pH <5.5 supports gastric placement (unreliable in patients on PPIs or H2 blockers).’,
+‘Secure tube to nose with split-foam tape or commercial nasal fixation device. Record external tube length at nostril. Document X-ray confirmation.’,
+],
+warnings:[
+‘FEEDING INTO A MISPLACED NGT IS A POTENTIALLY FATAL NEVER-EVENT — X-ray confirmation is NON-NEGOTIABLE before any use.’,
+‘Auscultation (air bubble sound over stomach) has been ABANDONED as a reliable placement confirmation method (NPSA 2011; NHS England 2019; WHO).’,
+‘pH strips alone are NOT reliable in patients on PPIs, H2 blockers, or in non-fasting states — gastric pH may be >5.5 even with correct placement.’,
+],
+notes:[
+‘Gold standard for NGT placement: chest X-ray showing tip position ≥10 cm below the GEJ, in the gastric body or antrum.’,
+‘Document: tube external length at naris, X-ray confirmation result, name of clinician who confirmed position, and date/time.’,
+‘Nasogastric tube change: every 4 weeks (or per manufacturer — some silicone tubes can remain up to 3 months).’,
+],
+refs:[
+‘National Patient Safety Agency (NPSA) Rapid Response Report (2011). Harm from Flushing of Nasogastric Tubes. PSA002.’,
+‘NHS England Patient Safety Alert (2019): NGT Initial Placement Checks Resource Set.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 553–562.’,
+]},
+
+{id:28,cat:‘feed’,icon:‘🥛’,title:‘Enteral Tube Feeding Administration’,
+summary:‘Safely delivering prescribed enteral nutrition via NGT, NJ tube, PEG, or jejunostomy with aspiration precautions.’,
+equipment:[‘Prescribed enteral formula (check: type, caloric density, osmolarity, expiry)’,‘Enteral-specific pump + ENFit tubing set’,‘60 mL ENFit syringe’,‘Sterile or filtered water for tube flushes’,‘pH strips for pre-bolus check’],
+steps:[
+‘Verify tube placement confirmation is documented on chart before starting any feed each shift.’,
+‘Check gastric residual volume (GRV) before each bolus or every 4–6 h for continuous feeds: aspirate with 60 mL syringe; measure; return aspirate to patient (unless >500 mL or infection suspected).’,
+‘If GRV >200–250 mL (bolus) or >500 mL (continuous): hold feed for 1 hour; reassess; notify provider if elevated GRV persists.’,
+‘Elevate HOB to 30–45° BEFORE starting; maintain throughout feeding and for 30–60 minutes post-bolus.’,
+‘Continuous feeding: prime ENFit pump tubing; set prescribed rate (mL/h) on dedicated enteral pump; change formula and tubing every 24 hours (open system).’,
+‘Bolus/gravity feeding: warm formula to room temperature; administer over 20–30 minutes via gravity syringe only.’,
+‘Flush tube: 30 mL water before feed, after feed, and before/after each medication administration.’,
+‘Medications via tube: crush compatible tablets; administer each drug separately in 15–30 mL water; flush 15 mL between each drug.’,
+‘Document: formula name, volume given, rate, GRV, flush volumes, tolerance signs (nausea, distension, vomiting, diarrhea).’,
+],
+warnings:[
+‘Aspiration is the most dangerous complication of enteral feeding — HOB elevation + SpO₂ monitoring are non-negotiable.’,
+‘ENFit tubing must NEVER connect to IV lines — ENFit ISO 80369-3 connectors are mandatory to prevent fatal enteral-IV misconnections.’,
+‘Do NOT crush sustained-release, enteric-coated, or sublingual medications for tube administration — consult pharmacist for all tube medication orders.’,
+],
+notes:[
+‘ENFit connectors (ISO 80369-3): internationally mandated standard since 2016 to prevent IV-enteral misconnections.’,
+‘Diarrhea with enteral feeds: check formula osmolarity, delivery rate, sorbitol content in medications, and rule out C. difficile.’,
+‘Prokinetics (metoclopramide 10 mg IV/PO q6h) may reduce persistently elevated GRV — physician order required; rule out obstruction first.’,
+],
+refs:[
+‘McClave SA et al. (2016). ASPEN/SCCM Clinical Guidelines for Nutrition Support in the Critically Ill. JPEN. 40(2):159–211.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 562–573.’,
+‘ASPEN Enteral Nutrition Practice Recommendations (2022). Nutr Clin Pract.’,
+]},
+
+{id:29,cat:‘feed’,icon:‘🍵’,title:‘Gastrostomy (PEG) Tube Care & Feeding’,
+summary:‘Maintaining PEG tube integrity, stoma health, and safely administering gastrostomy tube feedings.’,
+equipment:[‘60 mL ENFit syringe’,‘Sterile or filtered water for flushes’,‘Prescribed enteral formula’,‘Gauze + 0.9% NS for stoma care’,‘Non-sterile gloves’],
+steps:[
+‘Verify tube position: record external bumper measurement at each assessment shift and compare to insertion baseline.’,
+‘Assess PEG stoma: erythema, granulation tissue, hypergranulation, leakage around tube, buried bumper signs.’,
+‘Stoma care: clean daily with NS-moistened gauze in circular motion from tube outward; pat dry; apply split-gauze dressing.’,
+‘Gently rotate external bumper 360° and push in/pull out slightly to prevent buried bumper formation (per institutional policy).’,
+‘Check GRV before each bolus or every 4–6 h for continuous feeding.’,
+‘Elevate HOB 30–45° before and during feeding; maintain 30 min post-bolus.’,
+‘Flush: 30 mL water before feed, after feed, and before/after each medication.’,
+‘Medications: verify crushability with pharmacist; administer each drug separately; flush 15 mL between drugs.’,
+‘Document: external tube measurement, stoma assessment findings, GRV, volume given, and tolerance.’,
+],
+warnings:[
+‘Buried bumper syndrome: inability to rotate the tube, leakage despite intact system, and pain at stoma = endoscopic emergency; do NOT force tube; notify GI immediately.’,
+‘Accidental PEG removal (>6 weeks post-insertion): immediately insert a 16–18 Fr Foley catheter into the tract to maintain patency; notify GI surgery STAT.’,
+‘Never administer enteral feeding if tube external length measurement has changed (possible displacement) without re-confirmation.’,
+],
+notes:[
+‘PEG tubes: typically not electively replaced unless malfunction; can remain in place 3–6+ months or longer.’,
+‘Hypergranulation at stoma: silver nitrate application (physician/provider order) or foam compression dressing.’,
+‘Button (low-profile) gastrostomy: attach extension set before each feed; remove and cap securely after each use.’,
+],
+refs:[
+‘ASPEN (2022). Enteral Nutrition Clinical Guidelines. Nutr Clin Pract.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 573–581.’,
+‘Blumenstein I et al. (2014). PEG: Aspects of Quality Management. Z Gastroenterol. 52(6):683–705.’,
+]},
+
+// ═══════ BLOOD & TRANSFUSION ═══════
+{id:30,cat:‘blood’,icon:‘🩸’,title:‘Blood Transfusion Administration’,
+summary:‘Safely administering prescribed blood products with mandatory dual verification and continuous monitoring for transfusion reactions.’,
+equipment:[‘Prescribed blood product from blood bank’,‘Blood administration set with 170–260 micron filter’,‘0.9% NaCl (ONLY compatible flush for blood products)’,‘18G or larger peripheral IV or appropriate central access’,‘Vital signs equipment’,‘Transfusion reaction documentation form’],
+steps:[
+‘Verify physician order, patient consent, and blood bank compatibility report.’,
+‘DUAL BEDSIDE VERIFICATION with a second licensed nurse: patient ID × 2 identifiers; ABO/Rh on product label matches patient wristband; unit/donation number matches transfusion tag; product type; expiry date and time.’,
+‘Obtain baseline vital signs (T, HR, RR, BP, SpO₂) within 30 minutes before starting transfusion.’,
+‘Prime blood administration set with 0.9% NaCl. Connect to patient's IV.’,
+‘Start infusion SLOWLY: 2 mL/min (or approximately 30 mL in first 15 minutes) — remain at bedside continuously for first 15 minutes.’,
+‘Vital signs at 15 minutes post-start; then per protocol (typically at 1 hour and at completion).’,
+‘If no adverse reaction: adjust to prescribed rate. pRBCs must be completed within 4 hours of removal from blood bank.’,
+‘At completion: flush with NS; document start time, end time, total volume infused, and patient response.’,
+‘Return empty blood product bag (with administration set) to blood bank per institutional policy.’,
+],
+warnings:[
+‘Acute Hemolytic Transfusion Reaction (AHTR): fever, rigors, severe back/flank pain, hypotension, hemoglobinuria — STOP TRANSFUSION IMMEDIATELY; infuse NS; call physician; send blood and urine samples to lab; return product to blood bank.’,
+‘NEVER add any medication, IV solution, or fluid other than 0.9% NaCl to blood product tubing — causes hemolysis and product degradation.’,
+‘Febrile Non-Hemolytic Reaction (most common): temperature rise >1°C above baseline — STOP transfusion; rule out AHTR before considering antihistamine/antipyretic and resuming.’,
+],
+notes:[
+‘Universal donors: Group O Rh-negative for pRBCs; Group AB Rh-positive for plasma.’,
+‘Irradiated blood products required for immunocompromised patients to prevent transfusion-associated graft-versus-host disease (TA-GVHD).’,
+‘Platelet infusion: ≤30 min per unit; FFP over 30–60 min; cryoprecipitate as fast as tolerated.’,
+],
+refs:[
+‘AABB Standards for Blood Banks and Transfusion Services, 32nd Ed (2020). aabb.org.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 786–800.’,
+‘WHO Blood Transfusion Safety Technical Manual, 3rd Ed (2016). WHO Press.’,
+]},
+
+{id:31,cat:‘blood’,icon:‘🧪’,title:‘Venipuncture & Venous Blood Specimen Collection’,
+summary:‘Collecting blood specimens from peripheral veins with correct order of draw for accurate laboratory analysis.’,
+equipment:[‘Vacutainer holder + 21–22G needle (or syringe + needle for difficult veins)’,‘Appropriate specimen tubes (per lab orders)’,‘Tourniquet’,‘70% isopropyl alcohol swab’,‘Non-sterile gloves’,‘Gauze + adhesive bandage’,‘Pre-labeled specimen tubes’,‘Biohazard transport bag’],
+steps:[
+‘Review lab orders. Pre-label all tubes: patient name, MRN, date, time, collector initials.’,
+‘Identify patient with 2 identifiers. Apply tourniquet 5–10 cm proximal to site.’,
+‘Select vein: antecubital fossa preferred; forearm or dorsal hand as alternatives. Palpate for a straight, bouncy, non-tortuous vein.’,
+‘Cleanse with 70% alcohol swab using circular outward motion; allow to dry completely (≥30 s).’,
+‘Insert needle bevel-up at 15–30°. Advance until blood enters the flashback chamber.’,
+‘Stabilize needle. Insert Vacutainer tubes in correct ORDER OF DRAW (see notes below).’,
+‘Immediately invert each additive tube 8–10 times gently (do NOT shake).’,
+‘Release tourniquet BEFORE withdrawing needle. Apply gauze; firm pressure ≥60–120 s (longer for anticoagulated patients).’,
+‘Activate needle safety mechanism. Discard into sharps container. Apply adhesive bandage.’,
+‘Transport specimens within recommended time frame (most tests require ≤30–60 min; blood cultures immediately).’,
+],
+warnings:[
+‘NEVER collect from arm with active IV infusion on the same side — IV fluid dilutes and contaminates specimens.’,
+‘Hemolysis caused by forceful aspiration, vigorous shaking, or prolonged tourniquet (>1 min) invalidates results — particularly K⁺, LDH, and CK levels.’,
+‘Incorrect order of draw causes additive cross-contamination between tubes and alters coagulation studies (PT/INR, aPTT).’,
+],
+notes:[
+‘CLSI GP41 ORDER OF DRAW (2017): 1. Blood culture (yellow/SPS) → 2. Citrate coagulation (light blue) → 3. Serum/SST (gold/tiger) → 4. Lithium heparin (green) → 5. EDTA (lavender/purple) → 6. Fluoride/oxalate (gray).’,
+‘SST tubes (gold): allow 30 minutes for clot formation before centrifugation.’,
+‘Blood cultures: clean skin with 2% CHG-alcohol or betadine; obtain 2 sets (aerobic + anaerobic) from 2 separate sites.’,
+],
+refs:[
+‘CLSI GP41-ED7: Collection of Diagnostic Venous Blood Specimens, 7th Ed (2017). clsi.org.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 107–115.’,
+‘AABB Technical Manual, 20th Ed (2020). aabb.org.’,
+]},
+
+{id:32,cat:‘blood’,icon:‘🔴’,title:‘Arterial Blood Gas (ABG) Sample Collection’,
+summary:‘Obtaining an arterial blood specimen from the radial artery for acid-base balance and oxygenation status analysis.’,
+equipment:[‘Pre-heparinized ABG syringe kit’,‘23–25G short-bevel needle’,‘2% CHG/70% alcohol prep swab’,‘Ice slurry cup (for delayed transport)’,‘Non-sterile gloves’,‘Gauze + pressure dressing’,‘Pre-labeled specimen syringe cap’],
+steps:[
+‘Perform Modified Allen's Test: compress radial AND ulnar arteries simultaneously; patient opens/closes fist 10 times; release ulnar artery only — palm should flush pink within 6 seconds (positive = adequate collateral circulation).’,
+‘Position wrist in hyperextension over a rolled towel. Palpate radial pulse at distal wrist lateral side.’,
+‘Clean site with CHG-alcohol prep swab; allow to dry completely.’,
+‘Insert needle bevel-up at 30–45° directly over the point of maximal pulsation. Arterial pressure auto-fills syringe with pulsatile blood flow.’,
+‘Collect 1–3 mL. Activate safety mechanism; apply firm digital pressure immediately for ≥5 minutes (≥10 min if patient is anticoagulated).’,
+‘Remove ALL air bubbles from syringe immediately. Cap syringe securely.’,
+‘Place in ice slurry if laboratory transport will take >15–20 minutes.’,
+‘Label with: patient ID, collection time, body temperature, FiO₂ or O₂ L/min, and ventilator mode.’,
+‘Send to lab immediately (<15 min ideal; on ice if delayed). Document procedure, site, time, and clinical context.’,
+],
+warnings:[
+‘Failed Allen's Test (collateral circulation inadequate): do NOT use the radial artery on that side — use the contralateral radial, femoral (physician), or brachial (physician) artery.’,
+‘Arterial hematoma can compress the radial nerve: assess sensory function and hand motor strength after procedure.’,
+‘NEVER sample from femoral artery without physician authorization, specific procedural training, and post-procedure monitoring protocol.’,
+],
+notes:[
+‘Normal ABG values: pH 7.35–7.45; PaCO₂ 35–45 mmHg; PaO₂ 80–100 mmHg; HCO₃ 22–26 mEq/L; SaO₂ ≥95%.’,
+‘ABG interpretation sequence: (1) pH → acidosis or alkalosis; (2) PaCO₂ → respiratory component; (3) HCO₃ → metabolic component; (4) compensation present?’,
+‘Continuous arterial lines eliminate repeated punctures for frequent sampling in ICU patients.’,
+],
+refs:[
+‘AARC Clinical Practice Guideline: Sampling for ABG Analysis (2001). Respir Care. 46(5):498–505.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 78–84.’,
+‘Thalheimer M et al. (2019). ABG Interpretation for Nurses. Intensive Crit Care Nurs. 54:73–80.’,
+]},
+
+// ═══════ CENTRAL LINES & VASCULAR ═══════
+{id:33,cat:‘central’,icon:‘🔗’,title:‘Central Venous Catheter (CVC) Dressing Change’,
+summary:‘Changing the sterile dressing at a CVC site to prevent CLABSI using chlorhexidine and aseptic technique.’,
+equipment:[‘CVC dressing change kit (CHG-impregnated disc + transparent film dressing)’,‘Sterile gloves’,‘Surgical mask (for nurse and patient)’,‘2% CHG/70% alcohol swab sticks’,‘Additional transparent dressing’,‘Ruler for external catheter length measurement’,‘Label’],
+steps:[
+‘Hand hygiene. Apply surgical mask. Instruct patient to also wear mask if able. Explain procedure.’,
+‘Stabilize catheter with non-dominant hand THROUGHOUT the entire dressing change to prevent displacement.’,
+‘Remove old dressing by peeling edges TOWARD insertion site (prevents accidental catheter retraction).’,
+‘Inspect: erythema, discharge, tenderness, any catheter migration (compare measured external length to documented baseline).’,
+‘Don sterile gloves.’,
+‘Scrub insertion site with CHG swab sticks using friction for ≥30 seconds in back-and-forth motion; then circular motion outward. Allow to dry ≥30 seconds (do NOT fan dry).’,
+‘Apply CHG-impregnated gel disc over insertion site if included in kit.’,
+‘Apply transparent sterile film dressing firmly from center outward; no air pockets; completely occlusive.’,
+‘Label: date, time, nurse initials. Change frequency: transparent dressings every 7 days; gauze dressings every 48 h; either immediately if soiled, loose, or damp.’,
+‘Document: dressing change, site assessment findings, external catheter length measurement, and patient tolerance.’,
+],
+warnings:[
+‘CHG is the standard-of-care antiseptic for CVC dressing changes (CDC 2017; INS 2021) — do NOT substitute povidone-iodine alone for routine maintenance care.’,
+‘Any suspicion of CLABSI (unexplained fever, chills, rigors, purulence at insertion site) → 2 blood culture sets + notify physician → consider catheter removal.’,
+‘All catheter accesses require CHG scrub of the needleless connector — laxity in scrub compliance is the primary modifiable CLABSI risk factor.’,
+],
+notes:[
+‘CLABSI prevention bundle (CDC): hand hygiene + maximal sterile barriers at insertion + CHG skin prep + optimal site selection + daily catheter necessity reassessment.’,
+‘Passive disinfection caps (70% IPA-impregnated) on all lumens reduce CLABSI by 28–86% — used in addition to (not instead of) active scrub.’,
+‘Sutureless securement devices (e.g., StatLock) are preferred over sutures — lower CLABSI and catheter dislodgement rates.’,
+],
+refs:[
+‘CDC (2011, updated 2017). Guidelines for the Prevention of Intravascular Catheter-Related Infections. cdc.gov.’,
+‘INS Standards of Practice — Central Venous Access (2021). J Infus Nurs. 44(1S).’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 143–152.’,
+]},
+
+{id:34,cat:‘central’,icon:‘🔄’,title:‘CVC/PICC Flushing & Needleless Connector Change’,
+summary:‘Maintaining central line patency with standardized flush technique and scheduled needleless connector replacement.’,
+equipment:[‘10 mL NS pre-filled syringe (minimum 10 mL to prevent excessive pressure)’,‘Heparin lock flush per protocol (10–100 units/mL)’,‘New sterile needleless connector (Luer-lock)’,‘70% isopropyl alcohol swabs’,‘Non-sterile gloves’],
+steps:[
+‘Hand hygiene. Apply non-sterile gloves.’,
+‘Scrub the needleless connector with 70% isopropyl alcohol using friction for ≥15 seconds. Allow to dry ≥15 seconds.’,
+‘Attach 10 mL NS syringe. Unclamp lumen.’,
+‘Flush with push-pause turbulent technique: inject 1 mL rapidly → brief pause → inject 1 mL → pause → repeat until 10 mL delivered.’,
+‘Maintain positive pressure while clamping (close clamp while the last 0.5 mL is still being injected — varies by connector type).’,
+‘For unused lumens: heparin-lock per institutional protocol (3–5 mL of 10 or 100 units/mL). Clamp.’,
+‘To change connector: clamp lumen; scrub old connector one final time; remove; attach new sterile connector using aseptic no-touch technique.’,
+‘Label new connector with date and time. Document flushing and connector change in nursing notes.’,
+],
+warnings:[
+‘NEVER flush against resistance — may indicate catheter thrombosis or kinking; notify provider; consider alteplase (tPA) per protocol.’,
+‘NEVER use syringes smaller than 10 mL for CVCs or PICCs — small syringes generate excessive pressure (>300 psi) that can fracture the catheter.’,
+‘Needleless connectors must be changed: every 72–96 hours, with every blood product administration, and immediately when visibly contaminated or compromised.’,
+],
+notes:[
+‘Alteplase (tPA) 2 mg/2 mL: instill into occluded lumen; dwell 30–120 min; aspirate and discard; flush — effective for catheter-associated thrombosis.’,
+‘Passive disinfection caps left on between accesses passively disinfect the connector surface with 70% IPA.’,
+‘INS 2021: positive-pressure flush technique and clamping sequence must match connector type — consult institutional protocol.’,
+],
+refs:[
+‘INS Standards of Practice (2021). J Infus Nurs. 44(1S).’,
+‘CDC (2017). Intravascular Catheter Infection Prevention Guidelines. cdc.gov.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 152–161.’,
+]},
+
+{id:35,cat:‘central’,icon:‘📍’,title:‘PICC Line Assessment & Care’,
+summary:‘Maintaining peripherally inserted central catheter patency, monitoring for complications, and educating the patient.’,
+equipment:[‘CVC dressing kit (CHG-based)’,‘10 mL NS flush syringes’,‘Centimeter ruler for external length measurement’,‘Heparin lock per protocol’],
+steps:[
+‘Assess external catheter length at each dressing change: compare measured cm to baseline insertion documentation (any change >2 cm suggests migration).’,
+‘Inspect entire arm from insertion site to axilla: erythema, warmth, edema, superficial vein tracking, tenderness (signs of thrombophlebitis or DVT).’,
+‘Dressing change using same CHG technique as CVC (Procedure #33): every 7 days or PRN.’,
+‘Flush all lumens with 10 mL NS push-pause; heparin-lock unused lumens per protocol.’,
+‘Confirm PICC tip position documentation on chart (radiologically confirmed at insertion; re-confirm if external length changes).’,
+‘Educate patient: protect arm from trauma; no BP cuff on PICC arm; no tight sleeves; notify nurse immediately if arm becomes swollen, painful, or warm.’,
+],
+warnings:[
+‘PICC migration is common — NEVER re-advance an externalized catheter (sterility is lost and tip position is unknown).’,
+‘Upper extremity DVT occurs in 2–5% of PICC patients — duplex Doppler ultrasound if arm swelling, warmth, or pain develops.’,
+‘PICC in antecubital fossa has higher thrombosis and infection rates — basilic or brachial veins are preferred insertion sites.’,
+],
+notes:[
+‘PICCs can remain in place up to 12 months if maintained properly and clinical indication persists.’,
+‘Correct tip position: distal third of the superior vena cava at the cavoatrial junction (SVC-CAJ) — confirmed by chest X-ray at insertion.’,
+‘MAGIC criteria for PICC use (Chopra 2015): appropriate for: antibiotics ≥6 days; TPN; chemotherapy; irritant/vesicant infusions.’,
+],
+refs:[
+‘INS Standards of Practice (2021). J Infus Nurs. 44(1S).’,
+‘Lippincott Nursing Procedures, 9th Ed (2022).’,
+‘Chopra V et al. (2015). MAGIC Criteria for PICC Selection. Ann Intern Med. 163(4):304–314.’,
+]},
+
+// ═══════ OSTOMY & SURGICAL DRAINS ═══════
+{id:36,cat:‘ostomy’,icon:‘🟡’,title:‘Ostomy Pouching System Change (Colostomy/Ileostomy/Urostomy)’,
+summary:‘Replacing the ostomy pouching system to maintain stoma viability, periostomal skin integrity, and patient comfort.’,
+equipment:[‘Ostomy measuring guide/template’,‘Scissors’,‘New wafer (skin barrier) + pouch (drainable or closed)’,‘Barrier paste, strips, or rings’,‘Skin barrier powder + barrier wipe (for denuded skin)’,‘Warm water + soft washcloth’,‘Waste bag’,‘Non-sterile gloves’],
+steps:[
+‘Gather all supplies before starting. Empty the pouch if drainable before removal.’,
+‘Remove old wafer by supporting periostomal skin with one hand while peeling wafer away from skin in the opposite direction.’,
+‘Assess stoma: color (normal = beefy red or pink), size, shape, mucocutaneous junction integrity.’,
+‘Assess periostomal skin: erythema, erosion, fungal rash, hyperplasia, peristomal fistula.’,
+‘Clean stoma and periostomal skin with warm water and soft washcloth; pat completely DRY — moisture impairs wafer adhesion.’,
+‘Measure stoma with template. Trace and cut wafer opening 2–3 mm (1/8 in) larger than stoma (not too large — exposed skin erodes from effluent).’,
+‘Crusting technique for denuded skin: apply barrier powder → barrier wipe → repeat 2–3 times to build a protective layer.’,
+‘Warm wafer between hands for 30–60 seconds (improves adhesion by softening the adhesive).’,
+‘Apply barrier paste or strip around the cut wafer opening. Remove backing; center wafer over stoma from bottom up. Press firmly for ≥60 seconds.’,
+‘Attach and close pouch. Document stoma assessment and periostomal skin condition.’,
+],
+warnings:[
+‘Stoma turning PURPLE, DUSKY, or BLACK = ischemia — IMMEDIATELY notify provider; do not wait.’,
+‘Mucocutaneous separation (gap between stoma and skin edge) allows fecal contamination of wound — notify surgeon.’,
+‘Do NOT cut wafer opening too large — exposed periostomal skin will erode rapidly, especially with ileostomy effluent (high enzymatic content).’,
+],
+notes:[
+‘Wafer change frequency: every 3–5 days; sooner if any leakage detected — ileostomy effluent causes rapid skin breakdown.’,
+‘Ileostomy: high liquid output (800–1500 mL/day); high electrolyte loss risk (Na⁺, K⁺); monitor hydration and electrolytes.’,
+‘WOCN referral: for stoma complications, poorly sited stoma, parastomal hernia, or patient/family education needs.’,
+],
+refs:[
+‘WOCN Society (2018). Ostomy Care and Management Clinical Guideline. J Wound Ostomy Continence Nurs.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 585–597.’,
+‘Salvadalena G et al. (2020). WOCN Society Position Statement on Stomal Complications. J Wound Ostomy Continence Nurs. 47(1).’,
+]},
+
+{id:37,cat:‘ostomy’,icon:‘💧’,title:‘Surgical Drain Management (JP, Hemovac, Blake)’,
+summary:‘Monitoring, emptying, and maintaining closed surgical drainage systems to sustain negative pressure and prevent infection.’,
+equipment:[‘Non-sterile gloves’,‘Graduated measuring container’,‘Normal saline + gauze for site care’,‘Adhesive dressing (split gauze + tape)’,‘Documentation record’],
+steps:[
+‘Identify drain type: Jackson-Pratt (JP — oval bulb), Hemovac (flat spring-loaded disc), or Blake (grooved round drain).’,
+‘Assess exit site: erythema, separation, skin maceration, or excessive drainage around the tube.’,
+‘Don non-sterile gloves. Empty drain when ½ to ¾ full.’,
+‘JP emptying: open bulb cap fully; tilt and pour drainage into measuring cup; fully compress bulb before closing cap (restores negative pressure suction).’,
+‘Hemovac emptying: open pour spout; pour drainage; flatten disc completely; close spout firmly to re-create suction.’,
+‘Measure: record output volume, color, and consistency at each emptying and per-shift summary.’,
+‘Clean exit site with NS-moistened gauze; apply fresh split-gauze dressing.’,
+‘Confirm drain tubing is patent, unsecured from body (but secured to dressing), not kinked or under tension.’,
+‘Document: per-emptying and cumulative shift volume, color, consistency, and site assessment.’,
+],
+warnings:[
+‘Failure to recompress bulb/disc fully after emptying = loss of suction = seroma/hematoma formation = infection risk.’,
+‘NEVER clamp or remove a surgical drain without explicit physician order.’,
+‘Abrupt cessation of drainage (previously draining drain) may indicate drain occlusion, migration, or kinking — assess and notify surgeon.’,
+],
+notes:[
+‘Normal drainage progression: sanguinous (first 24 h) → serosanguinous (days 1–3) → serous (days 3+) — each stage is expected.’,
+‘Drain removal criteria: typically output <25–30 mL/24 hours for 2 consecutive days (per surgeon preference).’,
+‘Chylous drainage (milky white after initiating oral feeds) from neck or thoracic drain indicates chyle leak — notify surgeon immediately.’,
+],
+refs:[
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 245–253.’,
+‘Durai R & Ng PC (2010). Surgical Vacuum Drains: Types, Uses, and Complications. AORN J. 91(2):266–271.’,
+‘Toon CD et al. (2013). Early vs. Delayed Dressing Removal After Primary Closure of Surgical Wounds. Cochrane Database Syst Rev.’,
+]},
+
+// ═══════ CARDIAC & RESUSCITATION ═══════
+{id:38,cat:‘cardiac’,icon:‘❤️’,title:‘Adult Basic Life Support (BLS/CPR)’,
+summary:‘Providing high-quality chest compressions and rescue breathing to adults in cardiac arrest per 2020 AHA guidelines.’,
+equipment:[‘Personal protective equipment (gloves + face shield)’,‘Pocket mask or BVM with O₂’,‘AED (retrieve immediately)’],
+steps:[
+‘Ensure scene safety. Tap shoulders firmly and shout: “Are you okay? Can you hear me?”’,
+‘If unresponsive + no normal breathing (agonal gasps count as no breathing): SIMULTANEOUSLY activate emergency response system (call code/911) AND retrieve AED.’,
+‘Begin chest compressions: heel of dominant hand on LOWER HALF of sternum; lock elbows; lean directly over patient.’,
+‘Compress 5–6 cm (2–2.4 inches) deep with FULL chest recoil between compressions.’,
+‘Rate: 100–120 compressions per minute. Minimize interruptions — each pause >10 s reduces survival.’,
+‘30 compressions: 2 rescue breaths for single-rescuer adult BLS. Each breath delivered over 1 second with visible chest rise.’,
+‘AED: power ON → apply pads (right subclavicular + left lateral chest at V5–V6 level) → stand clear → ANALYZE → follow prompts.’,
+‘If SHOCK ADVISED: clear patient → deliver shock → IMMEDIATELY resume CPR starting with compressions.’,
+‘Switch compressors every 2 minutes (at rhythm check) to maintain compression quality.’,
+‘Continue until: ROSC (return of spontaneous circulation), ACLS team takes over, or resuscitation terminated.’,
+],
+warnings:[
+‘Interruptions >10 seconds significantly reduce coronary perfusion pressure and survival — minimize all pauses.’,
+‘Hands-only CPR (compressions only) is recommended for untrained bystanders or when unwilling to give rescue breaths.’,
+‘Over-ventilation during CPR impairs venous return and worsens hemodynamics — give only enough breath for visible chest rise.’,
+],
+notes:[
+‘CPR quality indicators: visible full chest recoil; compression depth 5–6 cm; rate 100–120/min; CPR fraction (time spent compressing) >80%.’,
+‘Two-rescuer adult CPR: 30:2 until advanced airway placed; then asynchronous continuous compressions at 100–120/min + 1 breath every 6 seconds.’,
+‘ETCO₂ during CPR: <10 mmHg = inadequate compressions; sudden rise to >35–40 mmHg = likely ROSC.’,
+],
+refs:[
+‘American Heart Association (2020). BLS Provider Manual. AHA, Dallas, TX.’,
+‘Panchal AR et al. (2020). 2020 AHA Guidelines for CPR and ECC: Part 3 Adult BLS. Circulation. 142(16 Suppl 2):S366–S468.’,
+‘European Resuscitation Council (ERC) Guidelines (2021). Resuscitation.’,
+]},
+
+{id:39,cat:‘cardiac’,icon:‘⚡’,title:‘Defibrillation — Manual & AED’,
+summary:‘Delivering therapeutic electrical shock to terminate ventricular fibrillation or pulseless ventricular tachycardia.’,
+equipment:[‘Defibrillator (manual) or AED (automated)’,‘Self-adhesive electrode pads (preferred over paddles)’,‘Conductive gel (if using paddles)’,‘Cardiac monitor’],
+steps:[
+‘Confirm pulseless cardiac arrest: unresponsive + no pulse + monitor showing VF or pVT.’,
+‘Continue CPR while defibrillator is being retrieved and pads are being applied.’,
+‘Apply pads: APEX-STERNAL (anterior-lateral placement): right infraclavicular → left lateral chest at V5–V6 axillary level. Alternative: anterior-posterior placement if needed.’,
+‘Charge to prescribed energy: biphasic 120–200 J (per device manufacturer); monophasic 360 J.’,
+‘Call “CLEAR” loudly. Perform visual sweep: confirm NO one is in contact with patient, bed, or connected equipment.’,
+‘Deliver shock. IMMEDIATELY resume CPR beginning with chest compressions — do NOT delay to check rhythm.’,
+‘After 2 minutes of CPR: analyze rhythm. Repeat shock if VF/pVT persists; continue 2-minute CPR cycles.’,
+‘Document each shock: time, energy used, pre-shock and post-shock rhythm, and patient response.’,
+],
+warnings:[
+‘Physical contact with patient during shock delivery: any rescuer in contact receives a potentially lethal electrical shock — CLEAR check is non-negotiable.’,
+‘Implanted pacemakers/ICDs: place pad ≥8 cm (3 in) away from device generator — direct pad placement over device reduces shock efficacy.’,
+‘Defibrillation has NO role for asystole or PEA — focus on CPR quality and identification/treatment of reversible causes (5Hs and 5Ts).’,
+],
+notes:[
+‘Time from VF detection to first shock should be <2 minutes in all monitored clinical settings.’,
+‘Synchronized cardioversion differs from defibrillation: used for VT with a pulse, Afib, or SVT — synchronizes shock delivery to the QRS complex.’,
+‘5Hs: Hypoxia, Hypovolemia, Hydrogen ion (acidosis), Hypo/Hyperkalemia, Hypothermia; 5Ts: Tension pneumothorax, Tamponade, Toxins, Thrombosis (pulmonary/coronary), Trauma.’,
+],
+refs:[
+‘AHA (2020). ACLS Provider Manual. American Heart Association.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 210–220.’,
+‘Link MS et al. (2015). Adult Advanced Cardiovascular Life Support. Circulation. 132(18 Suppl 2):S444–464.’,
+]},
+
+{id:40,cat:‘cardiac’,icon:‘📡’,title:‘Telemetry Monitoring & Basic Rhythm Interpretation’,
+summary:‘Setting up continuous telemetry and systematically interpreting cardiac rhythms for early recognition of life-threatening arrhythmias.’,
+equipment:[‘Telemetry transmitter unit’,‘3-lead or 5-lead electrode set with pre-gelled electrodes’,‘Alcohol prep pads’,‘Central monitoring station access’],
+steps:[
+‘Explain telemetry monitoring purpose to patient. Prepare skin per electrode placement protocol.’,
+‘Apply electrodes and connect to telemetry transmitter lead wires.’,
+‘Confirm signal transmission quality at central monitoring station.’,
+‘Select lead with clearest P-wave and QRS complex (usually Lead II for most patients).’,
+‘Set individualized alarm limits: HR high and low (based on patient baseline, not generic defaults).’,
+‘Perform rhythm strip analysis at admission, every 8 hours, and with any clinical change.’,
+‘Systematic 6-step rhythm analysis: (1) Rate; (2) Regularity; (3) P waves present and consistent?; (4) PR interval (normal 0.12–0.20 s)?; (5) QRS width (normal <0.12 s)?; (6) QT interval assessment.’,
+‘Recognize CRITICAL rhythms requiring immediate action: VF, pVT, Asystole, Complete Heart Block (3rd degree), Torsades de Pointes, SVT with hemodynamic instability.’,
+],
+warnings:[
+‘Artifact from patient movement or electrode displacement can mimic VF — ALWAYS assess patient clinically before initiating any emergency response.’,
+‘Alarm fatigue (TJC National Patient Safety Goal): individualize alarm parameters and respond to every alarm — silence without assessment is never acceptable.’,
+‘A paced rhythm appearing on the monitor may still indicate hemodynamic compromise — assess patient clinically, not monitor data alone.’,
+],
+notes:[
+‘Normal sinus rhythm: regular rate 60–100 bpm; P wave before every QRS; PR interval 0.12–0.20 s; QRS <0.12 s.’,
+‘Afib: most common sustained arrhythmia; irregularly irregular rhythm; no discrete P waves; variable QRS rate — rate control goal HR <110 bpm at rest.’,
+‘QTc prolongation >500 ms with QT-prolonging drugs: haloperidol, azithromycin, methadone, fluoroquinolones — notify provider and consider drug substitution.’,
+],
+refs:[
+‘Drew BJ et al. (2004). AHA Practice Standards for ECG Monitoring in Hospital Settings. Circulation. 110(17):2721–2746.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022).’,
+‘AACN Practice Alert: Alarm Management (2013). Crit Care Nurse.’,
+]},
+
+{id:41,cat:‘cardiac’,icon:‘🔩’,title:‘Arterial Line (A-Line) Assessment & Management’,
+summary:‘Managing an indwelling arterial catheter for continuous blood pressure monitoring and repeated ABG sampling in ICU patients.’,
+equipment:[‘Arterial pressure transducer set’,‘500 mL NS pressurized bag at 300 mmHg’,‘IV pressure pole and transducer holder’,‘Bedside hemodynamic monitor’,‘Phlebostatic axis reference point (level)’],
+steps:[
+‘Zero the transducer to atmospheric pressure: level transducer at phlebostatic axis (4th ICS, midaxillary line); open stopcock to air; press ZERO on monitor; close stopcock.’,
+‘Re-zero whenever: patient position changes, system is disrupted, or readings are clinically inconsistent.’,
+‘Assess arterial waveform quality: sharp upstroke, clear dicrotic notch, gradual diastolic run-off.’,
+‘Assess insertion site and distal extremity every 4 hours: color, warmth, cap refill (normal <2 s), sensation, and movement distal to catheter.’,
+‘Perform fast-flush square-wave test: briefly activate flush; observe square wave → 1–2 oscillations → rapid return to baseline = optimal dynamic response.’,
+‘Verify pressure bag maintained at 300 mmHg for continuous 3 mL/h flush rate.’,
+‘Blood sampling: waste 5–10 mL first; collect specimen; flush line with NS after sampling.’,
+‘Document: waveform quality, BP values, distal limb assessment, every 4 hours.’,
+],
+warnings:[
+‘Air in the arterial line = ARTERIAL AIR EMBOLISM = stroke risk — close stopcock IMMEDIATELY; aspirate to remove air; call physician.’,
+‘Disconnection of arterial line = rapid, potentially lethal hemorrhage — apply immediate direct pressure; call for help.’,
+‘NEVER infuse medications through an arterial line — causes arterial necrosis and distal limb ischemia.’,
+],
+notes:[
+‘Phlebostatic axis: 4th ICS at midaxillary line — standard reference point for ALL hemodynamic transducers.’,
+‘Over-damped waveform (slurred, rounded): air bubble, blood clot, or kink in tubing → falsely low systolic/high diastolic reading.’,
+‘Under-damped waveform (excessive oscillations/ringing): falsely HIGH systolic reading → resonance problem; check catheter and tubing setup.’,
+],
+refs:[
+‘AACN (2009). Practice Alert: Pulmonary Artery/Arterial Pressure Monitoring. aacn.org.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 56–70.’,
+‘Pittman JA et al. (2004). Arterial and Central Venous Pressure Monitoring. Int Anesthesiol Clin. 42(1):13–30.’,
+]},
+
+// ═══════ NEUROLOGICAL & POSITIONING ═══════
+{id:42,cat:‘neuro’,icon:‘🧠’,title:‘Glasgow Coma Scale (GCS) Assessment’,
+summary:‘Objective, reproducible quantification of conscious level using eye, verbal, and motor response components.’,
+equipment:[‘Penlight (for pupil assessment)’,‘Sternal rub or trapezius pinch (noxious stimulus for motor testing)’,‘GCS documentation record’],
+steps:[
+‘Eye Opening (E): Spontaneous eye opening = 4; Opens to voice = 3; Opens to pain = 2; No eye opening = 1.’,
+‘Verbal Response (V): Oriented (knows name, place, date) = 5; Confused conversation = 4; Inappropriate words = 3; Incomprehensible sounds = 2; No verbal response = 1.’,
+‘Motor Response (M): Obeys commands = 6; Localizes pain (purposeful reach) = 5; Withdrawal from pain = 4; Abnormal flexion (decorticate) = 3; Abnormal extension (decerebrate) = 2; No motor response = 1.’,
+‘Sum all three: E + V + M = GCS Total Score (minimum 3; maximum 15).’,
+‘Assess PUPILS simultaneously: size (mm), equality, and direct/consensual light reactivity. Normal = PERRL (Pupils Equal, Round, Reactive to Light).’,
+‘Assess limb movement: strength and symmetry in all four extremities.’,
+‘Compare to previous GCS score: a change of ≥2 points OR new pupil asymmetry ≥1 mm is clinically significant — notify provider immediately.’,
+‘For intubated patients: score V component as “T” (tube): e.g., E3VTM5 — document contributing factors affecting score.’,
+],
+warnings:[
+‘GCS ≤8 correlates with inability to protect the airway — prepare for possible urgent intubation (have equipment at bedside).’,
+‘Unilateral pupil dilation (mydriasis) with sluggish reactivity = uncal herniation until proven otherwise — STAT CT head and neurosurgery notification.’,
+‘Sedation, paralytics, and metabolic encephalopathy confound GCS — document these factors alongside the score.’,
+],
+notes:[
+‘GCS severity: 14–15 = mild injury; 9–13 = moderate injury; 3–8 = severe brain injury.’,
+‘In TBI: serial GCS assessment every 1 hour for the first 24 hours in moderate-to-severe cases.’,
+‘Anisocoria: normal pupil size difference up to 1 mm; >1 mm new-onset difference is pathological until proven otherwise.’,
+],
+refs:[
+‘Teasdale G & Jennett B (1974). Assessment of Coma and Impaired Consciousness: A Practical Scale. Lancet. 2(7872):81–84.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 397–402.’,
+‘AANN (2021). Clinical Practice Guideline: Assessment of Neurological Conditions in Adults.’,
+]},
+
+{id:43,cat:‘neuro’,icon:‘🔦’,title:‘NIH Stroke Scale (NIHSS) & Stroke Assessment’,
+summary:‘Performing a structured neurological assessment for stroke recognition, deficit quantification, and treatment decision-making.’,
+equipment:[‘Penlight’,‘Tongue depressor’,‘NIHSS scoring tool (printout or electronic)’,‘Cotton swab (sensory testing)’,‘Reflex hammer’],
+steps:[
+‘Level of Consciousness (LOC): alertness; orientation (year, month); follow commands (open/close eyes, make fist).’,
+‘Gaze: conjugate horizontal eye deviation; assess full horizontal gaze excursion bilaterally.’,
+‘Visual fields: confrontation testing in all 4 quadrants; homonymous hemianopia detection.’,
+‘Facial movement: “Show me your teeth and close your eyes” — assess symmetry of lower and upper face.’,
+‘Arm motor: outstretched arms at 90° (seated) or 45° (supine) for 10 seconds — observe drift, effort, and gravity collapse.’,
+‘Leg motor: 30° elevation supine for 5 seconds — observe drift and gravity collapse.’,
+‘Limb ataxia: finger-nose-finger and heel-shin-shin coordination tests.’,
+‘Sensory: sharp vs. dull pin-prick discrimination on face, arm, and leg bilaterally.’,
+‘Language: name objects, repeat phrases, follow three-step command.’,
+‘Dysarthria: rate articulation clarity: “mama,” “tip-top,” “fifty-fifty.”’,
+‘Extinction/Inattention: simultaneous bilateral stimulation (visual and tactile).’,
+‘Sum NIHSS score (0–42). Report new or worsening deficits ≥2 points immediately.’,
+],
+warnings:[
+‘Any sudden focal neurological deficit = STROKE until proven otherwise → STROKE ALERT immediately → Non-contrast CT STAT → thrombolysis/thrombectomy decision within 4.5 hours of symptom onset.’,
+‘Posterior circulation strokes (vertebrobasilar): may present without obvious motor deficits — include vertigo, diplopia, dysphagia, ataxia, and LOC changes in assessment.’,
+‘Timing is critical: EVERY minute of delay without treatment costs ~1.9 million neurons, 13.8 billion synapses (Saver 2006).’,
+],
+notes:[
+‘FAST mnemonic: Face drooping, Arm weakness, Speech difficulty, Time to call emergency services.’,
+‘Door-to-needle time (IV alteplase): goal ≤60 min; door-to-puncture (endovascular): goal ≤90 min.’,
+‘NIHSS ≥6 = moderate-to-severe stroke; may be candidate for mechanical thrombectomy (DAWN/DEFUSE-3 trial criteria).’,
+],
+refs:[
+‘Brott T et al. (1989). Measurements of Acute Cerebral Infarction: A Clinical Examination Scale. Stroke. 20(7):864–870.’,
+‘AHA/ASA (2019). 2019 Update to the Early Management of Acute Ischemic Stroke Guidelines. Stroke. 50(12).’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 390–397.’,
+]},
+
+{id:44,cat:‘neuro’,icon:‘🛏️’,title:‘Safe Patient Handling, Transfer & Repositioning’,
+summary:‘Moving, turning, and transferring patients safely to prevent patient injury and occupational musculoskeletal harm.’,
+equipment:[‘Friction-reducing sheet or slide board’,‘Gait/transfer belt’,‘Mechanical lift (Hoyer or ceiling track) for dependent patients’,‘Foam wedge pillows and positioning aids’,‘Minimum 2 staff for all dependent patient movements’],
+steps:[
+‘Assess: patient weight, mobility level and ability to assist, presence of pain, lines/tubes/drains, and orthostatic risk.’,
+‘Determine staffing needed: minimum 2 staff for all dependent or near-dependent patients; use mechanical lift for patients >35 kg who cannot assist.’,
+‘Raise bed to nurse's hip (waist) level to prevent spinal loading during lateral work.’,
+‘Lower HOB flat (unless contraindicated by clinical condition) for repositioning in bed.’,
+‘Log-roll technique for spinal precautions: 3 staff — one stabilizes head/neck in neutral; one at thorax/pelvis; one at lower extremities; move patient as one synchronized unit on count of 3.’,
+‘Lateral repositioning: 30° tilt preferred over 90° side-lying (reduces trochanter pressure by 60%).’,
+‘After repositioning: verify patient comfort, restore HOB to prescribed degree, confirm no lines/tubes kinked or under tension.’,
+‘Document position change time and skin/pressure point assessment findings.’,
+],
+warnings:[
+‘Solo transfer of a dependent patient >35 kg without mechanical assist device violates OSHA ergonomics guidelines and increases staff injury risk.’,
+‘Log roll is MANDATORY for ALL patients with suspected or confirmed spinal injury until radiological clearance.’,
+‘Repositioning schedules must be consistently followed: every 2 hours in bed; every 1 hour in chair — missed turns are the primary cause of new facility-acquired pressure injuries.’,
+],
+notes:[
+‘30° lateral tilt with foam wedge: reduces trochanteric pressure compared to 90° side-lying; achieves both patient comfort and pressure redistribution.’,
+‘Friction-reducing draw sheets decrease shear force during lateral repositioning by up to 60%.’,
+‘Common repositioning positions: Semi-Fowler's 30–45° (default); High-Fowler's 60–90° (respiratory/post-op); Reverse Trendelenburg (GERD/aspiration risk); Prone (severe ARDS).’,
+],
+refs:[
+‘OSHA (2013). Guidelines for Nursing Homes: Ergonomics for the Prevention of Musculoskeletal Disorders. osha.gov.’,
+‘Waters TR (2007). When Is It Safe to Manually Lift a Patient? Am J Nurs. 107(8):53–58.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 453–462.’,
+]},
+
+// ═══════ INFECTION CONTROL & HYGIENE ═══════
+{id:45,cat:‘hygiene’,icon:‘🧴’,title:‘Hand Hygiene — WHO 5 Moments & Correct Technique’,
+summary:‘The single most effective infection prevention intervention — correct hand hygiene technique and application at the right moments.’,
+equipment:[‘Alcohol-based hand rub (ABHR) — 60–95% ethanol or isopropanol’,‘Antimicrobial soap + water (for visible soiling or C. difficile/norovirus exposure)’,‘Paper towels’,‘Nail brush (if nails heavily contaminated)’],
+steps:[
+‘WHO 5 Moments: ① Before patient contact; ② Before aseptic procedure; ③ After body fluid exposure risk; ④ After patient contact; ⑤ After contact with patient surroundings.’,
+‘ABHR technique: apply 1–2 pumps to palm; palm-to-palm rub; right palm over left dorsum with interlaced fingers; left palm over right dorsum; palm-to-palm fingers interlaced; backs of fingers to opposing palms; circular rub of each thumb; fingertip-to-palm rub each hand; rub until completely dry (minimum 20 seconds).’,
+‘Soap & water technique: wet hands with warm water; apply antimicrobial soap; use WHO 6-step technique for ≥40–60 seconds total; rinse thoroughly under running water; dry with paper towel; use towel to close faucet.’,
+‘Use ABHR for routine decontamination when hands are NOT visibly soiled.’,
+‘Use soap and water for: visibly soiled hands, Clostridioides difficile or norovirus exposures, before eating, after toilet use.’,
+],
+warnings:[
+‘ABHR does NOT eliminate C. difficile or norovirus spores — soap and water MANDATORY for these pathogens.’,
+‘Rings, bracelets, and wristwatches harbor bacteria beneath them — remove all jewelry before patient care.’,
+‘Long nails and artificial nails harbor more gram-negative bacteria under the nail plate — removed or banned in clinical settings (CDC).’,
+],
+notes:[
+‘Hand hygiene compliance worldwide averages only 40% — structured auditing with real-time feedback is the most effective improvement strategy.’,
+‘ABHR minimum duration: 20 seconds for effective decontamination; soap and water minimum: 40–60 seconds.’,
+‘Proper hand hygiene could prevent up to 50% of all healthcare-associated infections (WHO 2009 estimate).’,
+],
+refs:[
+‘WHO (2009). WHO Guidelines on Hand Hygiene in Health Care. WHO Press, Geneva.’,
+‘CDC (2002, updated 2019). Guideline for Hand Hygiene in Health-Care Settings. MMWR. 51(RR-16).’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 5–12.’,
+]},
+
+{id:46,cat:‘hygiene’,icon:‘🛡️’,title:‘Personal Protective Equipment (PPE) — Donning & Doffing’,
+summary:‘Correctly applying and removing PPE to protect the healthcare worker and prevent cross-contamination to other patients.’,
+equipment:[‘Non-sterile gloves (nitrile preferred)’,‘Isolation gown (fluid-resistant)’,‘Surgical mask OR N95 respirator (per precaution type)’,‘Goggles or face shield’,‘Shoe covers / head cover (if required by procedure)’],
+steps:[
+‘DONNING ORDER: 1. Hand hygiene → 2. Gown (tie securely at back) → 3. Mask or N95 respirator (fit-check) → 4. Goggles/face shield → 5. Gloves (extend cuffs over gown sleeves).’,
+‘N95 fit check: positive pressure test (cover exhalation valve, exhale — mask should puff out) or negative pressure test (cover both valves, inhale — mask should collapse slightly).’,
+‘DOFFING ORDER (most contaminated to least contaminated): 1. Gloves (roll outside in, avoid touching skin) → 2. Goggles/face shield (handle by strap/sides only, place in bin) → 3. Gown (unfasten ties, peel from shoulders inward rolling away from body) → 4. Mask/respirator (handle by ties/straps only — do NOT touch front). Hand hygiene after each step.’,
+‘Perform final hand hygiene after ALL PPE is removed.’,
+‘All PPE must be removed BEFORE exiting the patient's room.’,
+],
+warnings:[
+‘The FRONT of all PPE (especially the mask and gown front) is considered HIGHLY CONTAMINATED — handle ONLY by straps, ties, and edges during doffing.’,
+‘N95 respirators require annual fit testing per OSHA 29 CFR 1910.134 — a poorly fitting N95 provides no better protection than a surgical mask.’,
+‘Reusing single-use PPE is NOT standard of care (except during crisis standards of care/shortage protocols) — report all supply shortages.’,
+],
+notes:[
+‘Transmission-based precautions: Contact (gown + gloves); Droplet (surgical mask + gloves ± gown); Airborne (N95 + negative pressure room + gown + gloves).’,
+‘Eye protection reduces mucosal bloodborne pathogen exposure by >70% — mandatory for all splash or splatter risk procedures.’,
+‘Studies show that DOFFING is the highest-risk step for contamination — slow, deliberate technique reduces self-contamination significantly.’,
+],
+refs:[
+‘CDC (2020). Sequence for Donning and Doffing PPE. cdc.gov/niosh.’,
+‘WHO (2020). Rational Use of PPE for COVID-19. WHO/2019-nCoV/IPC/PPE_use/2020.4.’,
+‘OSHA 29 CFR 1910.134 — Respiratory Protection Standard.’,
+]},
+
+{id:47,cat:‘hygiene’,icon:‘🚧’,title:‘Transmission-Based Isolation Precautions’,
+summary:‘Implementing contact, droplet, or airborne isolation precautions to prevent pathogen transmission beyond standard precautions.’,
+equipment:[‘Isolation signage (correct type)’,‘Contact: gloves + gown’,‘Droplet: surgical mask + gloves (± gown)’,‘Airborne: N95 + negative pressure room + gown + gloves’,‘Dedicated patient equipment per room’],
+steps:[
+‘Identify isolation category from pathogen or suspected diagnosis (see notes).’,
+‘Place isolation sign on patient room door BEFORE entering.’,
+‘Don appropriate PPE BEFORE entering the room.’,
+‘Dedicate all non-critical equipment to the patient's room: stethoscope, BP cuff, thermometer, pulse oximeter.’,
+‘Limit patient transport outside room to medically essential procedures only.’,
+‘When patient transport is required: apply appropriate masking to patient (surgical mask for droplet/airborne); notify receiving department of isolation status.’,
+‘Perform hand hygiene on entering AND exiting the room. For C. difficile: soap and water required INSIDE room before exiting.’,
+‘Doff all PPE in correct order in anteroom or just outside doorway. Perform final hand hygiene immediately after.’,
+],
+warnings:[
+‘Lapses in isolation precautions are the primary cause of horizontal pathogen spread in hospital settings.’,
+‘C. difficile: spores survive on environmental surfaces for >5 months; only sporicidal (bleach-based) disinfectants are effective; ABHR is NOT effective.’,
+‘Airborne precautions require negative pressure rooms with ≥12 air changes per hour (AIA/FGI 2014 guidelines).’,
+],
+notes:[
+‘Contact precautions: MRSA, VRE, C. difficile, scabies, draining wounds, RSV (pediatric).’,
+‘Droplet precautions: influenza, pertussis, COVID-19 (non-aerosol-generating), bacterial meningitis.’,
+‘Airborne precautions: pulmonary/laryngeal TB, measles, varicella/disseminated zoster, monkeypox, COVID-19 (during aerosol-generating procedures).’,
+‘Protective (reverse) isolation: severely immunocompromised patients (BMT, absolute neutrophil count <500/μL).’,
+],
+refs:[
+‘CDC/HICPAC (2007). Guideline for Isolation Precautions: Preventing Transmission of Infectious Agents in Healthcare Settings. cdc.gov.’,
+‘Siegel JD et al. (2007). 2007 Guideline for Isolation Precautions. Infect Control Hosp Epidemiol. 28(S1).’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 416–432.’,
+]},
+
+{id:48,cat:‘hygiene’,icon:‘🦷’,title:‘Oral Hygiene — Hospitalized Patients & VAP Prevention Bundle’,
+summary:‘Providing structured oral hygiene to prevent ventilator-associated pneumonia (VAP) and maintain oral tissue health.’,
+equipment:[‘Soft toothbrush’,‘0.12% chlorhexidine gluconate (CHG) solution — for intubated patients only’,‘Fluoride toothpaste’,‘Oral suction catheter or Yankauer’,‘Non-sterile gloves’,‘Petroleum jelly or oral moisturizer for lips’],
+steps:[
+‘Elevate HOB to 30–45° (or lateral position if unable to maintain elevation).’,
+‘Assess oral cavity: mucosa, lips, tongue, teeth/dentures, debris, odor, lesions.’,
+‘Intubated patients: suction oropharynx BEFORE oral care to remove pooled secretions that accumulate above the ETT cuff.’,
+‘Brush all tooth surfaces, gums, and tongue: 2 minutes with soft toothbrush using gentle circular motion.’,
+‘Rinse with 0.12% CHG solution for mechanically ventilated patients per VAP bundle protocol.’,
+‘Suction oral cavity thoroughly after rinsing.’,
+‘Apply moisturizer to lips and oral mucosa.’,
+‘For non-intubated patients: assist with brushing twice daily; mouthwash rinse twice daily if swallowing is intact.’,
+‘Document: oral cavity assessment findings and care provided.’,
+],
+warnings:[
+‘CHG 0.12% oral rinse is only recommended for intubated ICU patients — recent evidence (2016 Cochrane) shows no benefit in non-ventilated patients and possible harm.’,
+‘Aspiration of oral secretions is the primary mechanism of VAP — suction BEFORE oral care is critical for intubated patients.’,
+‘Foam oral swabs alone are INSUFFICIENT for plaque removal — use a toothbrush whenever possible.’,
+],
+notes:[
+‘VAP bundle (IHI/AACN): HOB elevation 30–45° + oral CHG + daily sedation vacation + daily weaning assessment + subglottic secretion drainage + VTE prophylaxis.’,
+‘Oral care frequency: every 4 hours for ICU/ventilated patients; every 8–12 hours for general ward patients.’,
+‘Xerostomia (dry mouth): common with O₂ therapy and mouth breathing — frequent moistening and artificial saliva products required.’,
+],
+refs:[
+‘AACN (2017). VAP Prevention Practice Alert. Crit Care Nurse. 37(3).’,
+‘Shi Z et al. (2013). Oral Hygiene Care for Critically Ill Patients to Prevent VAP. Cochrane Database Syst Rev.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 588–594.’,
+]},
+
+{id:49,cat:‘hygiene’,icon:‘🚿’,title:‘Complete Bed Bath & Perineal Care’,
+summary:‘Providing thorough cleansing to dependent patients for hygiene, comfort, and comprehensive skin assessment.’,
+equipment:[‘Basin with warm water 41–46°C (106–115°F)’,‘No-rinse 2% CHG bath wipes (ICU preferred) or mild pH-balanced soap + washcloths’,‘Bath blanket’,‘Clean gown and fresh linens’,‘Unscented lotion’,‘Non-sterile gloves’],
+steps:[
+‘Provide privacy. Explain procedure. Check water temperature on inner wrist before applying to patient.’,
+‘Use bath blanket to drape unexposed areas throughout the procedure.’,
+‘Sequence: eyes (inner to outer canthus, new cloth each eye) → face → neck → ears → far arm → near arm → chest/axillae → abdomen → far leg → near leg → feet → back → perineum (always last).’,
+‘Use a clean area of the washcloth for each new stroke; change washcloths frequently.’,
+‘Pat dry gently — do NOT vigorously rub; inspect all skin surfaces during drying.’,
+‘Female perineal care: separate labia; clean from pubic symphysis TOWARD rectum (anterior to posterior); never from rectum forward.’,
+‘Male perineal care: retract foreskin (if intact); cleanse glans in circular motion outward; replace foreskin COMPLETELY after cleaning (prevents paraphimosis).’,
+‘Apply lotion to dry areas (avoid between toes — promotes fungal growth).’,
+‘Change gown and bed linens. Reposition. Document any new skin findings.’,
+],
+warnings:[
+‘Never leave an unconscious or confused patient unattended during bathing in or near water.’,
+‘Do NOT massage reddened bony prominences — worsens ischemic pressure injury.’,
+‘Failure to replace foreskin after male perineal care can cause PARAPHIMOSIS (painful constriction requiring emergency treatment).’,
+],
+notes:[
+‘ICU patients: daily 2% CHG bath cloths reduce CLABSI by 25% and CAUTI by 26% (Noto et al., JAMA 2015).’,
+‘CHG baths: apply and allow to air-dry — do NOT rinse off; efficacy depends on residual CHG remaining on skin.’,
+‘Report any unexpected findings during bathing: unexplained bruising, lacerations, or unusual marks may indicate accidental or intentional injury.’,
+],
+refs:[
+‘Noto MJ et al. (2015). Chlorhexidine Bathing and Health Care-Associated Infections. JAMA. 313(4):369–378.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 28–42.’,
+‘CDC (2013). Strategies to Prevent CLABSI in Acute Care Hospitals. Infect Control Hosp Epidemiol. 35(S2).’,
+]},
+
+{id:50,cat:‘hygiene’,icon:‘🦿’,title:‘VTE Prophylaxis — Sequential Compression Devices & Anticoagulants’,
+summary:‘Implementing mechanical and pharmacological venous thromboembolism prevention in hospitalized patients.’,
+equipment:[‘Sequential compression device (SCD) pump + leg sleeves (knee-high or thigh-high)’,‘Tape measure for accurate sleeve sizing’,‘Prescribed anticoagulant (UFH, enoxaparin, fondaparinux) as ordered’,‘Caprini or hospital-approved VTE risk assessment tool’],
+steps:[
+‘Assess VTE risk at admission using a validated scoring tool (Caprini score or institutional equivalent). Document risk level.’,
+‘Apply SCDs: measure calf circumference → select correct sleeve size → wrap smoothly from ankle to knee → connect securely to pump.’,
+‘Activate pump; verify sequential inflation cycle (distal-to-proximal compression: foot → calf → thigh).’,
+‘SCD usage: wear whenever patient is in bed or chair; remove ONLY for ambulation, bathing, or skin assessment.’,
+‘Administer pharmacological prophylaxis as prescribed: enoxaparin SC (40 mg once daily standard medical/surgical dose) or UFH 5000 units SC q8–12h.’,
+‘Encourage and facilitate EARLY AMBULATION — the highest-priority VTE prevention intervention post-surgery.’,
+‘Educate patient: report calf pain, swelling, warmth, or new leg redness immediately.’,
+‘Assess lower extremity daily: warmth, swelling, tenderness, skin color changes.’,
+],
+warnings:[
+‘SCDs are CONTRAINDICATED in: active DVT/PE (risk of embolization), severe peripheral arterial insufficiency, open leg wounds or skin grafts on legs.’,
+‘NEVER apply SCDs to legs with confirmed or suspected DVT — use pharmacological anticoagulation only.’,
+‘Enoxaparin requires dose adjustment or avoidance in renal impairment (CrCl <30 mL/min) — anti-Xa monitoring may be required.’,
+],
+notes:[
+‘VTE is the most preventable cause of hospital death — estimated 300,000 deaths/year in the US (AHRQ).’,
+‘Virchow's Triad: Venous stasis + Endothelial injury + Hypercoagulability = VTE formation.’,
+‘Wells DVT Score ≥2 = high probability → compress Doppler ultrasound before starting therapeutic anticoagulation.’,
+‘LMWH (enoxaparin) is standard of care for most medical-surgical patients; fondaparinux preferred in HIT history.’,
+],
+refs:[
+‘Guyatt GH et al. (2012). Antithrombotic Therapy and VTE Prevention: 9th Ed ACCP Guidelines. Chest. 141(2 Suppl).’,
+‘Lippincott Nursing Procedures, 9th Ed (2022).’,
+‘AHRQ (2022). Preventing Hospital-Associated Venous Thromboembolism: A Guide for Effective Quality Improvement. ahrq.gov.’,
+]},
+
+{id:51,cat:‘hygiene’,icon:‘🧼’,title:‘Sterile Field Preparation & Sterile Glove Application’,
+summary:‘Establishing and maintaining a sterile field for invasive procedures using surgical aseptic technique.’,
+equipment:[‘Sterile procedure pack or tray’,‘Sterile drapes’,‘Sterile gloves (correct size)’,‘Sterile additional supplies as needed’,‘70% alcohol hand preparation’,‘Surgical mask’],
+steps:[
+‘Apply surgical mask. Perform thorough hand hygiene.’,
+‘Open outer packaging of sterile field supplies using 1-inch rule (only outer edge is non-sterile).’,
+‘Create sterile field: open sterile drape from center outward without crossing over the sterile field.’,
+‘Add supplies to field: grasp non-sterile outer packaging; hold above field; allow sterile contents to drop/fall onto field — do NOT reach over the sterile field.’,
+‘Sterile glove application (closed technique): pick up first glove from inside cuff (touching only inner surface); pull onto hand; pick up second glove from outside (sterile-to-sterile); pull on.’,
+‘Adjust gloves by interlocking fingers once both are on — never touch non-sterile surfaces.’,
+‘Maintain sterile field awareness: never reach behind you; always face the sterile field; keep sterile gloved hands above waist level and in front of body.’,
+‘Any break in sterile technique (contamination event): declare it immediately; replace contaminated items.’,
+],
+warnings:[
+‘Any area of the sterile field that becomes wet, torn, or touches a non-sterile surface is considered CONTAMINATED — replace immediately.’,
+‘Edge rule: the 2.5 cm (1 inch) border of any sterile field is considered contaminated — work only within the center.’,
+‘Sterile gloves that touch non-sterile objects, or a non-sterile person touching the sterile field, require immediate replacement of contaminated items.’,
+],
+notes:[
+‘Sterile field is time-limited — do not set up more than necessary time before procedure begins.’,
+‘Airborne contamination increases with time, traffic, and air currents — minimize room traffic during sterile procedures.’,
+‘Open technique vs. closed technique: closed technique (glove-to-glove, hand-to-hand) is preferred for aseptic sterile glove application.’,
+],
+refs:[
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 13–22.’,
+‘Perry AG et al. Clinical Nursing Skills & Techniques, 10th Ed (2022). Elsevier.’,
+‘Association of periOperative Registered Nurses (AORN). Guideline for Sterile Technique (2023). aorn.org.’,
+]},
+
+{id:52,cat:‘meds’,icon:‘💉’,title:‘Intradermal (ID) Injection — PPD Tuberculin Skin Test (Mantoux)’,
+summary:‘Injecting 0.1 mL of tuberculin purified protein derivative intradermally to screen for latent Mycobacterium tuberculosis infection.’,
+equipment:[‘1 mL tuberculin syringe’,‘26–27G short-bevel needle (3/8–1/2 in)’,‘0.1 mL tuberculin PPD (5 TU/0.1 mL)’,‘70% alcohol swab’,‘Non-sterile gloves’,‘Skin marking pen for site identification’],
+steps:[
+‘Verify physician order. Explain the test procedure and the need to return in 48–72 hours for reading.’,
+‘Select site: inner (volar) forearm, 4 finger-widths below the antecubital fossa; avoid areas of hair, scars, tattoos, or veins.’,
+‘Cleanse with 70% alcohol; allow to dry completely.’,
+‘Hold skin taut with non-dominant hand. Hold syringe nearly parallel to skin at 5–15° bevel-up.’,
+‘Advance needle just until bevel is covered by dermis (only 3–4 mm insertion depth).’,
+‘Inject 0.1 mL SLOWLY — a pale, raised bleb (wheal) of 6–10 mm MUST appear (confirms intradermal placement).’,
+‘Withdraw needle at the same angle. Do NOT massage (disperses antigen).’,
+‘Circle injection site with pen; instruct patient on return date (48–72 hours for PPD reading).’,
+‘At 48–72 hours: measure induration (firmness, NOT erythema) in the transverse (perpendicular to arm axis) direction in millimeters.’,
+],
+warnings:[
+‘If no wheal forms: needle was subcutaneous — withdraw, select a new site ≥5 cm away, and repeat; subcutaneous injection invalidates the test.’,
+‘NEVER massage the injection site — disperses PPD antigen into surrounding tissue and invalidates the test.’,
+‘Anaphylaxis has been reported with tuberculin administration — epinephrine 0.3 mg IM (anterolateral thigh) must be available.’,
+],
+notes:[
+‘PPD interpretation by risk category: ≥5 mm positive for HIV-positive, recent TB contacts, immunosuppressed; ≥10 mm for healthcare workers, immigrants, homeless, prisoners; ≥15 mm for low-risk general population.’,
+‘BCG-vaccinated individuals may have false-positive PPD — use IGRA (QuantiFERON-TB Gold or T-SPOT.TB) as preferred test in BCG-vaccinated persons.’,
+‘Booster phenomenon: a second PPD 1–3 weeks after a negative PPD may boost a positive response in previously sensitized persons — used in healthcare worker two-step testing.’,
+],
+refs:[
+‘CDC (2020). Testing for Latent TB Infection in the United States. cdc.gov/tb.’,
+‘Lippincott Nursing Procedures, 9th Ed (2022). pp 540–545.’,
+‘American Thoracic Society (2000). Diagnostic Standards and Classification of TB. Am J Respir Crit Care Med. 161(4):1376–1395.’,
+]},
+
+];
+
+// ── RENDER ──
+let curCat=‘all’,srch=’’;
+function cat(id){return CATS.find(c=>c.id===id)||{icon:‘📋’,label:‘General’,color:’#374151’,bg:’#f9fafb’}}
+function buildBar(){
+const bar=document.getElementById(‘catBar’);
+CATS.forEach(c=>{
+const b=document.createElement(‘button’);
+b.className=‘cb’;b.dataset.cat=c.id;
+b.innerHTML=c.icon+’ ‘+c.label;
+b.onclick=()=>setcat(b,c.id);
+bar.appendChild(b);
+});
+document.getElementById(‘tP’).textContent=PROCS.length;
+document.getElementById(‘tC’).textContent=CATS.length;
+}
+function setcat(btn,id){
+document.querySelectorAll(’.cb’).forEach(b=>b.classList.remove(‘active’));
+btn.classList.add(‘active’);curCat=id;render();
+}
+function render(){
+const grid=document.getElementById(‘grid’);
+let list=PROCS;
+if(curCat!==‘all’) list=list.filter(p=>p.cat===curCat);
+if(srch){const s=srch.toLowerCase();list=list.filter(p=>p.title.toLowerCase().includes(s)||(p.summary||’’).toLowerCase().includes(s)||(p.steps||[]).some(x=>x.toLowerCase().includes(s))||(p.equipment||[]).some(x=>x.toLowerCase().includes(s)));}
+const c=cat(curCat===‘all’?null:curCat);
+document.getElementById(‘pgTitle’).textContent=curCat===‘all’?‘All Procedures’:c.label;
+document.getElementById(‘pgCount’).innerHTML=‘Showing <strong>’+list.length+’</strong> procedure’+(list.length!==1?‘s’:’’);
+if(!list.length){grid.innerHTML=’<div class="nr"><div class="ni">🔍</div><p>No procedures match your search.</p></div>’;return;}
+grid.innerHTML=list.map(p=>{
+const ct=cat(p.cat);
+const s3=(p.steps||[]).slice(0,3);
+return ‘<div class="card" onclick="openModal('+p.id+')">’+
+‘<div class="ct" style="background:linear-gradient(90deg,'+ct.color+','+ct.color+'88)"></div>’+
+‘<div class="cb2">’+
+‘<div class="ch">’+
+‘<div class="ci2" style="background:'+ct.bg+';color:'+ct.color+'">’+p.icon+’</div>’+
+‘<div><div class="ctt">’+p.title+’</div>’+
+‘<span class="ctag" style="background:'+ct.bg+';color:'+ct.color+'">’+ct.icon+’ ‘+ct.label+’</span></div>’+
+‘</div>’+
+‘<ul class="csteps">’+
+s3.map((s,i)=>’<li><span class="sn" style="background:'+ct.color+'">’+( i+1)+’</span><span>’+s+’</span></li>’).join(’’)+
+(p.steps.length>3?’<li><span class="more" style="color:'+ct.color+'">+’+(p.steps.length-3)+’ more steps…</span></li>’:’’)+
+‘</ul>’+
+‘<div class="cf">’+
+‘<span class="tag tgr">📚 Evidence-Based</span>’+
+(p.warnings&&p.warnings.length?’<span class="tag tr">⚠️ Alerts</span>’:’’)+
+‘<span class="tag tb">’+p.steps.length+’ steps</span>’+
+‘</div>’+
+‘</div></div>’;
+}).join(’’);
+}
+function openModal(id){
+const p=PROCS.find(x=>x.id===id);if(!p)return;
+const ct=cat(p.cat);
+document.getElementById(‘mIco’).textContent=p.icon;
+document.getElementById(‘mIco’).style.cssText=‘background:’+ct.bg+’;color:’+ct.color;
+document.getElementById(‘mTit’).textContent=p.title;
+document.getElementById(‘mCat’).innerHTML=’<span style="color:'+ct.color+'">’+ct.icon+’ ‘+ct.label+’</span>’;
+let h=’<div class="ms"><div class="ib ibi"><span class="ii">ℹ️</span><span>’+p.summary+’</span></div></div>’;
+if(p.equipment&&p.equipment.length){
+h+=’<div class="ms"><div class="mst">🧰 Equipment Required</div><div class="eg">’+
+p.equipment.map(e=>’<span class="ec">✅ ‘+e+’</span>’).join(’’)+’</div></div>’;
+}
+h+=’<div class="ms"><div class="mst">📋 Step-by-Step Procedure</div><ol class="sol">’+
+p.steps.map((s,i)=>’<li><span class="sc" style="background:'+ct.color+'">’+(i+1)+’</span><span>’+s+’</span></li>’).join(’’)+
+‘</ol></div>’;
+if(p.warnings&&p.warnings.length){
+h+=’<div class="ms"><div class="mst">⚠️ Clinical Warnings & Alerts</div>’+
+p.warnings.map(w=>’<div class="ib ibw"><span class="ii">⚠️</span><span>’+w+’</span></div>’).join(’’)+’</div>’;
+}
+if(p.notes&&p.notes.length){
+h+=’<div class="ms"><div class="mst">💡 Clinical Notes & Tips</div>’+
+p.notes.map(n=>’<div class="ib ibs"><span class="ii">💡</span><span>’+n+’</span></div>’).join(’’)+’</div>’;
+}
+if(p.refs&&p.refs.length){
+h+=’<div class="ms"><div class="mst">📚 Evidence-Based References</div><div class="rb">’+
+p.refs.map(r=>’<div class="ri">’+r+’</div>’).join(’’)+’</div></div>’;
+}
+document.getElementById(‘mBod’).innerHTML=h;
+document.getElementById(‘overlay’).classList.add(‘open’);
+document.body.style.overflow=‘hidden’;
+}
+function ovClick(e){if(e.target===document.getElementById(‘overlay’))closeModal()}
+function closeModal(){document.getElementById(‘overlay’).classList.remove(‘open’);document.body.style.overflow=’’}
+document.addEventListener(‘keydown’,e=>{if(e.key===‘Escape’)closeModal()});
+document.getElementById(‘searchInput’).addEventListener(‘input’,function(){srch=this.value.trim();render()});
+buildBar();render();
+</script>
+
+</body>
+</html>
